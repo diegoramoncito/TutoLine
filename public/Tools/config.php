@@ -6,7 +6,7 @@ define('DATABASE_USER', 'user');
 define('DATABASE_PASS', 'pass');
 define('DATABASE_HOST', 'localhost');
 
-$DB = new DBPDO();
+$db = new DBPDO();
 
 //Menu options
 

@@ -8,15 +8,15 @@ class Objetivo{
     public $tutor_id_tutor;
     
 
-    function get($id){
+    function get($id, $db){
 
     }
 
-    function save(){
+    function save($db){
 
     }
 
-    function delete(){
+    function delete($db){
 
     }
     

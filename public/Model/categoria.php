@@ -7,15 +7,15 @@ class Categoria{
     public $descripcion_categoria;
     public $dificultad;
 
-    function get($id){
+    function get($id, $db){
 
     }
 
-    function save(){
+    function save($db){
 
     }
 
-    function delete(){
+    function delete($db){
 
     }
     
