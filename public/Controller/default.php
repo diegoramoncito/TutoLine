@@ -52,12 +52,12 @@ function register(){
         // $alumno->password=$password;
         // $alumno->save($db);
     }else{
-        include_once('Model/tutor.php');
-        $tutor = Tutor->get(0,$db);
-        $tutor->nombre_tutor=$nombre;
-        $tutor->email_alumno=$email;
-        $tutor->password=$password;
-        $tutor->save($db);
+        // include_once('Model/tutor.php');
+        // $tutor = Tutor->get(0,$db);
+        // $tutor->nombre_tutor=$nombre;
+        // $tutor->email_alumno=$email;
+        // $tutor->password=$password;
+        // $tutor->save($db);
     }
     
 }
