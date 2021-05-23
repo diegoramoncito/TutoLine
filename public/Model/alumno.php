@@ -1,6 +1,5 @@
 <?php
 
-
 class Alumno{
     public $id_alumno;
     public $nombre_alumno;
@@ -40,3 +39,4 @@ class Alumno{
     }
     
 }
+?>

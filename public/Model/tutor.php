@@ -19,3 +19,5 @@ class Tutor{
     function delete($db){
     }
 }
+
+?>
