@@ -42,7 +42,7 @@ function register(){
     $nombre = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $destination .= $tipo;
+    $destination .= "?".$tipo;
     if($tipo == "alumno"){
         //include_once('Model/Alumno.php');
         // $alumno = Alumno->get(0,$db);
