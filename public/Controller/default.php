@@ -18,8 +18,8 @@ switch($ruta){
         fnDefault();
 }
 
-echo "header(\"Location: $destination\")";
-//die();
+header("Location: $destination");
+die();
 
 
 function login(){
