@@ -23,21 +23,25 @@ echo "header(\"Location: $destination\")";
 
 
 function login(){
+    GLOBAL $destination;
     echo "Login\n";
     $destination = "/login.html";
 }
 
 function register(){
+    GLOBAL $destination;
     echo "Register\n";
     $destination = "/register.html";
 }
 
 function crud(){
+    GLOBAL $destination;
     echo "Crud\n";
     $destination = "/data.html";
 }
 
 function fnDefault(){
+    GLOBAL $destination;
     echo "Default\n";
 }
 
