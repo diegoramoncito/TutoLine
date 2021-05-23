@@ -15,7 +15,7 @@ switch($ruta){
         register();
         break;
     default:
-            
+        fnDefault();
 }
 
 echo "header(\"Location: $destination\")";
@@ -23,17 +23,22 @@ echo "header(\"Location: $destination\")";
 
 
 function login(){
+    echo "Login\n";
     $destination = "/login.html";
 }
 
 function register(){
+    echo "Register\n";
     $destination = "/register.html";
 }
 
 function crud(){
+    echo "Crud\n";
     $destination = "/data.html";
 }
 
-
+function fnDefault(){
+    echo "Default\n";
+}
 
 ?>
