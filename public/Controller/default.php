@@ -20,9 +20,9 @@ switch($ruta){
     default:
             
 }
-/*
+
 header("Location: $destination");
-die();
+//die();
 
 
 function login(){
@@ -36,7 +36,7 @@ function register(){
 function crud(){
     destination = "/data.html";
 }
-*/
+
 
 
 ?>
