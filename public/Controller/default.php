@@ -31,7 +31,7 @@ function register(){
 }
 
 function crud(){
-    destination = "/data.html";
+    $destination = "/data.html";
 }
 
 
