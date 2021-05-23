@@ -1,6 +1,7 @@
 <?php
 $destination = "";
-switch((int)$_GET['route1']){
+$ruta=intval($_GET['route1']);
+switch($ruta){
     case 1:
         login();
         break;
