@@ -24,8 +24,8 @@ switch($ruta){
 }
 
 
-header("Location: $destination");
-die();
+echo "header(\"Location: $destination\")";
+//die();
 
 
 
