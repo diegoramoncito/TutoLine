@@ -1,5 +1,7 @@
 <?php
 include_once('Tools/config.php');
+include_once('Model/alumno.php');
+include_once('Model/tutor.php');
 
 $destination = "";
 $ruta=intval($_GET['route1']);
@@ -43,7 +45,7 @@ function register(){
     $email = $_POST['email'];
     $password = $_POST['password'];
     if($tipo == "alumno"){
-        include_once('Model/alumno.php');
+        //include_once('Model/alumno.php');
         // $alumno = Alumno->get(0,$db);
         // $alumno->nombre_alumno=$nombre;
         // $alumno->email_alumno=$email;
