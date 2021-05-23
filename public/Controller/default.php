@@ -43,6 +43,7 @@ function register(){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    /*
     if($tipo == "alumno"){
         include_once('Model/Alumno.php');
         $alumno = Alumno->get(0,$db);
@@ -58,6 +59,7 @@ function register(){
         $tutor->password=$password;
         $tutor->save($db);
     }
+    */
 }
 
 function crud(){
