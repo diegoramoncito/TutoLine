@@ -1,8 +1,5 @@
 <?php
 $destination = "";
-echo $_GET['route1'];
-echo "\n";
-echo intval($_GET['route1']);
 $ruta=intval($_GET['route1']);
 switch($ruta){
     case 1:
@@ -21,7 +18,7 @@ switch($ruta){
             
 }
 
-header("Location: $destination");
+echo "header(\"Location: $destination\")";
 //die();
 
 
