@@ -1,40 +1,25 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-class CreateAlumnosTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::dropIfExists('alumnos');
-        Schema::create('alumnos', function (Blueprint $table) {
-            $table->id('id_alumno');
-            $table->string('nombre_alumno',50);
-            $table->string('apellido_alumno',50);
-            $table->timestamp('fecha_nacimiento_alumno', $precision = 0);
-            $table->integer('telefono_alumno');
-            $table->string('email_alumno',50);
-            $table->string('password_alumno',25);
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->timestamps();
-        });
+class Alumno{
+    public $id_alumno;
+    public $nombre_alumno;
+    public $apellido_alumno;
+    public $fecha_nacimiento_alumno;
+    public $telefono_alumno;
+    public $email_alumno;
+    public $password_alumno;
+
+    function get($id){
+
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('alumnos');
+    function save(){
+
     }
+
+    function delete(){
+
+    }
+    
 }
