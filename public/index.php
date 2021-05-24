@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['type'])){
-    $destination ="";
+    $destination ="admin.php";
     if($_SESSION['type'] == "alumno")
         $destination = "alumno.php";
     if($_SESSION['type'] == "tutor")
