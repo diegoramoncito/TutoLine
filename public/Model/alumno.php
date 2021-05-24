@@ -23,13 +23,18 @@ class Alumno{
                 $password_alumno = $element['password_alumno'];
             }
         }else{
-            $query = "";
+            $query = "insert into alumnos()values()";
             $db->execute($query);
             $result = $db->fetchAll('SELECT LAST_INSERT_ID()');
             foreach($result as $element){
                 $id_alumno = $element['id_alumno'];
             }
         }
+    }
+
+    function search($field,$value,$db){
+        $result = $db->fetchAll("Select * from alumnos where $field like '%$value%'");
+        return $result;
     }
 
     function save($db){
