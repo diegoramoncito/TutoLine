@@ -1,4 +1,5 @@
 <?php
+session_start();
 //DB conn settings
 include_once('pdo.php');
 define('DATABASE_NAME', 'tutoria');

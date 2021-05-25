@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_SESSION['type'])){
     $destination ="admin.php";
     if($_SESSION['type'] == "alumno")
