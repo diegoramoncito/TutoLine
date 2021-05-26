@@ -1,9 +1,9 @@
 <?php
 include_once('Tools/config.php');
 $id=$_SESSION['id'];
-$result = $db->fetchAll("select * from tutors where id_tutor = $id");
+$result = $db->fetchAll("select * from alumnos where id_alumno = $id");
 foreach($result as $element){
-    $name = $element['nombre_tutor']." ".$element['apellido_tutor'];
+    $name = $element['nombre_alumno']." ".$element['apellido_alumno'];
 }
 
 ?>
@@ -78,7 +78,7 @@ foreach($result as $element){
                with font-awesome or any other icon font library -->
           
           <?php
-          tutorMenu();
+          alumnoMenu();
           ?>
 
         </ul>
