@@ -119,6 +119,73 @@ function tutorMenu(){
 }
 
 function adminMenu(){
-    echo '';
+    echo '<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+    
+    <li class="nav-header">Administración</li>
+
+    <li class="nav-item">
+      <a href="Controller/default.php?route1=1" class="nav-link">
+        <i class="nav-icon fas fa-book"></i>
+        <p>
+          Categorías
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="Controller/default.php?route1=2" class="nav-link">
+        <i class="nav-icon fas fa-user-graduate"></i>
+        <p>
+          Alumnos
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="Controller/default.php?route1=3" class="nav-link">
+        <i class="nav-icon fas fa-chalkboard-teacher"></i>
+        <p>
+          Tutores
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-bullseye"></i>
+        <p>
+          Objetivos
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-file"></i>
+        <p>
+          Tareas
+        </p>
+      </a>
+    </li>
+
+    <li class="nav-header">Estadísticas</li>
+
+    <li class="nav-header">Configuración</li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-user"></i>
+        <p>
+          Perfil
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/closeSession.php" class="nav-link">
+        <i class="nav-icon fas fa-user"></i>
+        <p>
+          Cerrar sesión
+        </p>
+      </a>
+    </li>
+';
 }
 ?>
