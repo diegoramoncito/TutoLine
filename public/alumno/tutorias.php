@@ -1,5 +1,5 @@
 <?php
-include_once('Tools/config.php');
+include_once('../Tools/config.php');
 $id=$_SESSION['id'];
 $result = $db->fetchAll("select * from alumnos where id_alumno = $id");
 foreach($result as $element){
