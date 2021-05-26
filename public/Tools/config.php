@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['type'])){
+    header("Location: /login.html");
+}
 //DB conn settings
 include_once('pdo.php');
 define('DATABASE_NAME', 'tutoria');
