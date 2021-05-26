@@ -24,7 +24,7 @@ class Tutor{
                 $this->password_tutor = $element['password_tutor'];
             }
         }else{
-            $query = "insert into tutors(nombre_tutor,apellido_tutor,telefono_tutor,email_tutor,password_tutor)values('','',1,'','')";
+            $query = "insert into tutors(nombre_tutor,apellido_tutor,telefono_tutor,email_tutor,password_tutor,formacion_academica)values('','',1,'','','')";
             $db->execute($query);
             $result = $db->fetchAll('SELECT LAST_INSERT_ID()');
             foreach($result as $element){
@@ -50,6 +50,7 @@ class Tutor{
         $query .= ",telefono_tutor = $this->telefono_tutor";
         $query .= ",email_tutor = '$this->email_tutor'";
         $query .= ",password_tutor = '$this->password_tutor'";
+        $query .= ",formacion_academica = '$this->formacion_academica'";
         $query .= " where id_tutor = $this->id_tutor";
         $db->execute($query);
     }

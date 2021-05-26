@@ -87,7 +87,7 @@ function register(){
             $destination = "/login.html";
         }
     }else{
-        $result = $db->fetchAll("select * from tutors where email_tutor = '$user'");
+        $result = $db->fetchAll("select * from tutors where email_tutor = '$email'");
         if(sizeof($result) == 0){
             include_once('../Model/tutor.php');
             $tutor = new Tutor();
