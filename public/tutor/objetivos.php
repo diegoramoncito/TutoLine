@@ -92,13 +92,7 @@ foreach($result as $element){
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Page title</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
+      
     </section>
 
     <!-- Main content -->
@@ -107,25 +101,43 @@ foreach($result as $element){
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
+          
         </div>
         <div class="card-body">
-          Start creating your amazing application!
+          <table id="dataTable" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Alumno</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $result = $db->fetchAll("select * from objetivos");
+              foreach($result as $element){
+              ?>
+              <tr>
+                <td><?php echo $element['nombre_objetivo']; ?></td>
+                <td><?php echo $element['descripcion_objetivo']; ?></td>
+                <td><?php echo $element['alumno_id_alumno']; ?></td>
+                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+              <?php
+              }
+              ?>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Alumno</th>
+                <th>Opciones</th>
+              </tr>
+            </tfoot>
+          </table>
         </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
       </div>
       <!-- /.card -->
 

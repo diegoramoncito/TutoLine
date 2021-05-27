@@ -103,39 +103,39 @@ foreach($result as $element){
         <a href="alumno.php?id=0" class="btn btn-primary">Crear</a>
         </div>
         <div class="card-body">
-            <table id="dataTable" class="table table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Email</th>
-                  <th>Opciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                $result = $db->fetchAll("select * from alumnos");
-                foreach($result as $element){
-                ?>
-                <tr>
-                  <td><?php echo $element['nombre_alumno']; ?></td>
-                  <td><?php echo $element['apellido_alumno']; ?></td>
-                  <td><?php echo $element['email_alumno']; ?></td>
-                  <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
-                </tr>
-                <?php
-                }
-                ?>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Email</th>
-                  <th>Opciones</th>
-                </tr>
-              </tfoot>
-            </table>
+          <table id="dataTable" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $result = $db->fetchAll("select * from alumnos");
+              foreach($result as $element){
+              ?>
+              <tr>
+                <td><?php echo $element['nombre_alumno']; ?></td>
+                <td><?php echo $element['apellido_alumno']; ?></td>
+                <td><?php echo $element['email_alumno']; ?></td>
+                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+              <?php
+              }
+              ?>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Opciones</th>
+              </tr>
+            </tfoot>
+          </table>
         </div>
       </div>
       <!-- /.card -->
