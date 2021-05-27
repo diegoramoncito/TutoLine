@@ -128,7 +128,7 @@ foreach($result as $element){
                   <td><?php echo $element['nombre_alumno']; ?></td>
                   <td><?php echo $element['apellido_alumno']; ?></td>
                   <td><?php echo $element['email_alumno']; ?></td>
-                  <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-error">Eliminar</a></td>
+                  <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
                 </tr>
                 <?php
                 }
