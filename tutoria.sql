@@ -6,6 +6,7 @@
 -- Tiempo de generación: 08-05-2021 a las 16:41:06
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
+use tutoria;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,7 +23,20 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+DROP TABLE IF EXISTS objetivos;
+DROP TABLE IF EXISTS tareas;
+DROP TABLE IF EXISTS tutors;
+DROP TABLE IF EXISTS alumnos;
+DROP TABLE IF EXISTS categorias;
+DROP TABLE IF EXISTS failed_jobs;
+DROP TABLE IF EXISTS migrations;
+DROP TABLE IF EXISTS password_resets;
+DROP TABLE IF EXISTS personal_access_tokens;
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS team_invitations;
+DROP TABLE IF EXISTS team_user;
+DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS users;
 --
 -- Estructura de tabla para la tabla `alumnos`
 --

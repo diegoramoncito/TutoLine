@@ -115,7 +115,6 @@ foreach($result as $element){
                 <tr>
                   <th>Nombre</th>
                   <th>Apellido</th>
-                  <th>Platform(s)</th>
                   <th>Email</th>
                   <th>Opciones</th>
                 </tr>
@@ -128,7 +127,6 @@ foreach($result as $element){
                 <tr>
                   <td><?php echo $element['nombre_alumno']; ?></td>
                   <td><?php echo $element['apellido_alumno']; ?></td>
-                  <td><?php echo $element['nombre_alumno']; ?></td>
                   <td><?php echo $element['email_alumno']; ?></td>
                   <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-error">Eliminar</a></td>
                 </tr>
@@ -140,7 +138,6 @@ foreach($result as $element){
                 <tr>
                   <th>Nombre</th>
                   <th>Apellido</th>
-                  <th>Platform(s)</th>
                   <th>Email</th>
                   <th>Opciones</th>
                 </tr>
