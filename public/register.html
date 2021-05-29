@@ -26,7 +26,7 @@
       <form action="Controller/default.php?route=25&route1=2" method="post">
         <div class="input-group mb-3">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="AlumnoProfesor" value="alumno">
+            <input class="form-check-input" type="radio" name="AlumnoProfesor" value="alumno" checked>
             <label class="form-check-label" for="alumno">Alumno</label>
           </div>
           <div class="form-check form-check-inline">
@@ -35,7 +35,23 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name" name="name">
+          <input type="text" class="form-control" placeholder="Nombre" name="name">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Apellido" name="lastName">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="date" class="form-control" placeholder="Fecha nacimiento" name="birthDate">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
