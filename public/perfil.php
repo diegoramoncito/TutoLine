@@ -4,7 +4,7 @@ $id=$_SESSION['id'];
 $type=$_SESSION['type'];
 
 if($type=="alumno"){
-    $result = $db->fetchAll("select * from alumnos where id_tutor = $id");
+    $result = $db->fetchAll("select * from alumnos where id_alumno = $id");
 }else{
     $result = $db->fetchAll("select * from tutors where id_tutor = $id");
 }
