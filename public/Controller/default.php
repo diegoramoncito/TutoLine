@@ -71,7 +71,9 @@ function register(){
     $destination = "/register.html";
 
     $tipo = $_POST['AlumnoProfesor'];
-    $nombre = $_POST['name'];
+    $nombre = $_POST['firstName'];
+    $apellido = $_POST['lastName'];
+    $fechaNacimiento = $_POST['birthDate'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     if($tipo == "alumno"){
@@ -81,6 +83,8 @@ function register(){
             $alumno = new Alumno();
             $alumno->get(0,$db);
             $alumno->nombre_alumno=$nombre;
+            $alumno->apellido_alumno=$apellido;
+            $alumno->fecha_nacimiento_alumno=$fechaNacimiento;
             $alumno->email_alumno=$email;
             $alumno->password_alumno=$password;
             $alumno->save($db);
@@ -93,6 +97,8 @@ function register(){
             $tutor = new Tutor();
             $tutor->get(0,$db);
             $tutor->nombre_tutor=$nombre;
+            $tutor->apellido_tutor=$apellido;
+            $tutor->fecha_nacimiento_tutor=$fechaNacimiento;
             $tutor->email_tutor=$email;
             $tutor->password_tutor=$password;
             $tutor->save($db);
