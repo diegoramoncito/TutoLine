@@ -63,7 +63,7 @@ foreach($result as $element){
         <div class="image">
           <img src="/img/user2-160x160.jpg" class="img-circle elevation-2">
         </div>
-        <div class="nav-header">
+        <div class="info">
           <a href="#" class="d-block"><?php  echo $name; ?></a>
         </div>
       </div>
