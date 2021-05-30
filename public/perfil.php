@@ -64,7 +64,7 @@ foreach($result as $element){
     </ul>
 
     <!-- Right navbar links -->
-      
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -124,7 +124,7 @@ foreach($result as $element){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Page title</h1>
+            <h1>Perfil</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
