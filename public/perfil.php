@@ -90,9 +90,7 @@ foreach($result as $element){
           <img src="/img/user2-160x160.jpg" class="img-circle elevation-2">
         </div>
         <div class="info">
-          <?php 
-          echo $name;
-          ?>
+        <a href="#" class="d-block"><?php  echo $name; ?></a>
         </div>
       </div>
 
