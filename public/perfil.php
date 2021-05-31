@@ -10,8 +10,10 @@ if(isset($_POST['nombre'])){
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $formacion = $_POST['formacion'];
-    $categoria = $_POST['categoria'];
+    if($type == "tutor"){
+      $formacion = $_POST['formacion'];
+      $categoria = $_POST['categoria'];
+    }
     if($type == "alumno"){
         include_once('Model/alumno.php');
         $element = new Alumno();
