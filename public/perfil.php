@@ -3,6 +3,42 @@ include_once('Tools/config.php');
 $id=$_SESSION['id'];
 $type=$_SESSION['type'];
 
+if(isset($_POST['nombre'])){
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $fecha = $_POST['fecha'];
+    $telefono = $_POST['telefono'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $formacion = $_POST['formacion'];
+    $categoria = $_POST['categoria'];
+    if($type == "alumno"){
+        include_once('Model/alumno.php');
+        $element = new Alumno();
+        $element->get($id,$db);
+        $element->nombre_alumno=$nombre;
+        $element->apellido_alumno=$apellido;
+        $element->fecha_nacimiento_alumno=$fecha;
+        $element->email_alumno=$email;
+        $element->password_alumno=$password;
+        $element->save($db);
+        header("Location: /alumno.php");
+    }else{
+        include_once('Model/tutor.php');
+        $element = new Tutor();
+        $element->get($id,$db);
+        $element->nombre_tutor=$nombre;
+        $element->apellido_tutor=$apellido;
+        $element->fecha_nacimiento_tutor=$fecha;
+        $element->email_tutor=$email;
+        $element->password_tutor=$password;
+        $element->formacion_academica=$formacion;
+        $element->categorias_id_categoria=$categoria;
+        $element->save($db);
+        header("Location: /tutor.php");
+    }
+}
+
 if($type=="alumno"){
     $result = $db->fetchAll("select * from alumnos where id_alumno = $id");
 }else{
@@ -138,7 +174,64 @@ foreach($result as $element){
 
         </div>
         <div class="card-body">
-          Start creating your amazing application!
+            <form action="perfil.php" method="post">
+                <div class="input-group mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="AlumnoProfesor" value="alumno" checked>
+                    <label class="form-check-label" for="alumno">Alumno</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="AlumnoProfesor" value="profesor">
+                    <label class="form-check-label" for="profesor">Profesor</label>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nombre" name="firstName">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Apellido" name="lastName">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                <input type="date" class="form-control" placeholder="Fecha nacimiento" name="birthDate">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-calendar"></span>
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                </div>
+                <!-- /.col -->
+                </div>
+            </form> 
         </div>
       </div>
       <!-- /.card -->

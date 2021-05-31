@@ -263,8 +263,7 @@ CREATE TABLE `teams` (
 -- Volcado de datos para la tabla `teams`
 --
 
-INSERT INTO `teams` (`id`, `user_id`, `name`, `personal_team`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Mario\'s Team', 1, '2021-05-01 05:07:52', '2021-05-01 05:07:52');
+INSERT INTO `teams` (`id`, `user_id`, `name`, `personal_team`, `created_at`, `updated_at`) VALUES(1, 1, 'Mario\'s Team', 1, '2021-05-01 05:07:52', '2021-05-01 05:07:52');
 
 -- --------------------------------------------------------
 
@@ -350,8 +349,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Mario', 'mario-andree@hotmail.com', NULL, '$2y$10$n0S2xge.e9VInHfjbocC9e7FvI4mm3tu5XWV6CRmzQfvl8Nxnco.2', NULL, NULL, 'sOQSPVxgD9v9CzgCFPXlGzrZez58WHoAzDwYCXn2wATlMVAOnLAU1xEb7fNm', 1, NULL, '2021-05-01 05:07:52', '2021-05-01 05:07:53');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES(1, 'Mario', 'mario-andree@hotmail.com', NULL, '$2y$10$n0S2xge.e9VInHfjbocC9e7FvI4mm3tu5XWV6CRmzQfvl8Nxnco.2', NULL, NULL, 'sOQSPVxgD9v9CzgCFPXlGzrZez58WHoAzDwYCXn2wATlMVAOnLAU1xEb7fNm', 1, NULL, '2021-05-01 05:07:52', '2021-05-01 05:07:53');
 
 --
 -- Índices para tablas volcadas

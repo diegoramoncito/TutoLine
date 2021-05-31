@@ -168,16 +168,7 @@ function adminMenu(){
 
     <li class="nav-header">Estadísticas</li>
 
-    <li class="nav-header">Configuración</li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-user"></i>
-        <p>
-          Perfil
-        </p>
-      </a>
-    </li>
     <li class="nav-item">
       <a href="/closeSession.php" class="nav-link">
         <i class="nav-icon fas fa-user"></i>

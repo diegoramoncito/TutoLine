@@ -112,19 +112,15 @@ foreach($result as $element){
               </tr>
             </thead>
             <tbody>
-              <?php
-              $result = $db->fetchAll("select * from objetivos");
-              foreach($result as $element){
-              ?>
+              <?php $result = $db->fetchAll("select * from objetivos");
+                    foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_objetivo']; ?></td>
                 <td><?php echo $element['descripcion_objetivo']; ?></td>
                 <td><?php echo $element['alumno_id_alumno']; ?></td>
                 <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
               </tr>
-              <?php
-              }
-              ?>
+              <?php } ?>
             </tbody>
             <tfoot>
               <tr>
