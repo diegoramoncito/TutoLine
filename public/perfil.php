@@ -176,54 +176,68 @@ foreach($result as $element){
         <div class="card-body">
             <form action="perfil.php" method="post">
                 <div class="input-group mb-3">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="AlumnoProfesor" value="alumno" checked>
-                    <label class="form-check-label" for="alumno">Alumno</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="AlumnoProfesor" value="profesor">
-                    <label class="form-check-label" for="profesor">Profesor</label>
-                </div>
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-user"></span>
+                      </div>
+                  </div>
                 </div>
                 <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Nombre" name="firstName">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                    <span class="fas fa-user"></span>
-                    </div>
-                </div>
-                </div>
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Apellido" name="lastName">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                    <span class="fas fa-user"></span>
-                    </div>
-                </div>
+                  <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-user"></span>
+                      </div>
+                  </div>
                 </div>
                 <div class="input-group mb-3">
-                <input type="date" class="form-control" placeholder="Fecha nacimiento" name="birthDate">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                    <span class="fas fa-calendar"></span>
-                    </div>
-                </div>
-                </div>
-                <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email" name="email">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                    <span class="fas fa-envelope"></span>
-                    </div>
-                </div>
+                  <input type="date" class="form-control" placeholder="Fecha nacimiento" name="fecha">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-calendar"></span>
+                      </div>
+                  </div>
                 </div>
                 <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password" name="password">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
-                    </div>
+                  <input type="tel" class="form-control" placeholder="Telefono" name="telefono">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-phone"></span>
+                      </div>
+                  </div>
                 </div>
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control" placeholder="Email" name="email">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-envelope"></span>
+                      </div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" class="form-control" placeholder="Password" name="password">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-lock"></span>
+                      </div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Formación" name="formacion">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-university"></span>
+                      </div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Categoria" name="categoria">
+                  <div class="input-group-append">
+                      <div class="input-group-text">
+                      <span class="fas fa-envelope"></span>
+                      </div>
+                  </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-4">
