@@ -53,7 +53,7 @@ class Tutor{
         $query .= ",email_tutor = '$this->email_tutor'";
         $query .= ",password_tutor = '$this->password_tutor'";
         $query .= ",formacion_academica = '$this->formacion_academica'";
-        $query .= ",categorias_id_categoria = '$this->categorias_id_categoria'";
+        $query .= ",categorias_id_categoria = $this->categorias_id_categoria";
         $query .= " where id_tutor = $this->id_tutor";
         $db->execute($query);
         error_log($query);
