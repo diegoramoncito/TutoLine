@@ -176,7 +176,7 @@ foreach($result as $element){
         <div class="card-body">
             <form action="perfil.php" method="post">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -184,7 +184,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+                  <input type="text" class="form-control" placeholder="Apellido" name="apellido" value="<?php echo $apellido; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -192,7 +192,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="date" class="form-control" placeholder="Fecha nacimiento" name="fecha">
+                  <input type="date" class="form-control" placeholder="Fecha nacimiento" name="fecha" value="<?php echo $fecha; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-calendar"></span>
@@ -200,7 +200,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="tel" class="form-control" placeholder="Telefono" name="telefono">
+                  <input type="tel" class="form-control" placeholder="Telefono" name="telefono" value="<?php echo $telefono; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-phone"></span>
@@ -208,7 +208,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email" name="email">
+                  <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-envelope"></span>
@@ -216,7 +216,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="password" class="form-control" placeholder="Password" name="password">
+                  <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo $password; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-lock"></span>
@@ -224,7 +224,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Formación" name="formacion">
+                  <input type="text" class="form-control" placeholder="Formación" name="formacion" value="<?php echo $formacion; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-university"></span>
@@ -232,7 +232,7 @@ foreach($result as $element){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Categoria" name="categoria">
+                  <input type="text" class="form-control" placeholder="Categoria" name="categoria" value="<?php echo $categoria; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-envelope"></span>
