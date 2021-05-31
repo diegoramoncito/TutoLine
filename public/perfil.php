@@ -223,6 +223,7 @@ foreach($result as $element){
                       </div>
                   </div>
                 </div>
+                <?php if($type=="tutor"){ ?>}
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Formación" name="formacion" value="<?php echo $formacion; ?>">
                   <div class="input-group-append">
@@ -239,6 +240,7 @@ foreach($result as $element){
                       </div>
                   </div>
                 </div>
+                <?php } ?>
                 <!-- /.col -->
                 <div class="col-4">
                     <button type="submit" class="btn btn-primary btn-block">Registrar</button>
