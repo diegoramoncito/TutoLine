@@ -21,7 +21,7 @@ if(isset($_POST['nombre'])){
         $element->get($id,$db);
         $element->nombre_alumno=$nombre;
         $element->apellido_alumno=$apellido;
-        //$element->fecha_nacimiento_alumno=$fecha;
+        $element->fecha_nacimiento_alumno=$fecha;
         $element->email_alumno=$email;
         $element->password_alumno=$password;
         $element->save($db);
@@ -32,7 +32,7 @@ if(isset($_POST['nombre'])){
         $element->get($id,$db);
         $element->nombre_tutor=$nombre;
         $element->apellido_tutor=$apellido;
-        //$element->fecha_nacimiento_tutor=$fecha;
+        $element->fecha_nacimiento_tutor=$fecha;
         $element->email_tutor=$email;
         $element->password_tutor=$password;
         $element->formacion_academica=$formacion;
