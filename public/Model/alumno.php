@@ -50,7 +50,6 @@ class Alumno{
         $query .= ",email_alumno = '$this->email_alumno'";
         $query .= ",password_alumno = '$this->password_alumno'";
         $query .= " where id_alumno = $this->id_alumno";
-        error_log($query);
         $db->execute($query);
     }
 
