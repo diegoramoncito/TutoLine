@@ -12,7 +12,7 @@ class Tutor{
 
     function get($id, $db){
         if($id>0){
-            $query = "select * from alumnos where id_tutor = $id";
+            $query = "select * from tutors where id_tutor = $id";
             $result = $db->fetchAll($query);
             foreach($result as $element){
                 $this->id_tutor = $element['id_tutor'];
