@@ -7,7 +7,6 @@ if(isset($_POST['nombre'])){
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $fecha = $_POST['fecha'];
-    error_log($fecha);
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -69,7 +68,7 @@ foreach($result as $element){
         $categoria = $element['categorias_id_categoria'];
     }
 }
-error_log("fecha en bd: $fecha");
+$fecha = explode(" ", $fecha)[0];
 
 ?>
 <!DOCTYPE html>
