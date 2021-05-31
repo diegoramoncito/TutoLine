@@ -68,8 +68,8 @@ foreach($result as $element){
         $formacion = $element['formacion_academica'];
         $categoria = $element['categorias_id_categoria'];
     }
-    
 }
+error_log("fecha en bd: $fecha");
 
 ?>
 <!DOCTYPE html>
