@@ -225,7 +225,7 @@ $fecha = explode(" ", $fecha)[0];
                       </div>
                   </div>
                 </div>
-                <?php if($type=="tutor"){ ?>}
+                <?php if($type=="tutor"){ ?>
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Formación" name="formacion" value="<?php echo $formacion; ?>">
                   <div class="input-group-append">
