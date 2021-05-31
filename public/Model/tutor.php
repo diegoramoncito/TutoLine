@@ -22,6 +22,8 @@ class Tutor{
                 $this->telefono_tutor = $element['telefono_tutor'];
                 $this->email_tutor = $element['email_tutor'];
                 $this->password_tutor = $element['password_tutor'];
+                $this->formacion_academica = $element['formacion_academica'];
+                $this->categorias_id_categoria = $element['categorias_id_categoria'];
             }
         }else{
             $query = "insert into tutors(nombre_tutor,apellido_tutor,telefono_tutor,email_tutor,password_tutor,formacion_academica)values('','',1,'','','')";
@@ -51,8 +53,10 @@ class Tutor{
         $query .= ",email_tutor = '$this->email_tutor'";
         $query .= ",password_tutor = '$this->password_tutor'";
         $query .= ",formacion_academica = '$this->formacion_academica'";
+        $query .= ",categorias_id_categoria = '$this->categorias_id_categoria'";
         $query .= " where id_tutor = $this->id_tutor";
         $db->execute($query);
+        error_log($query);
     }
 
     function delete($db){
