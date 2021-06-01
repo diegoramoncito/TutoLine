@@ -124,8 +124,8 @@ $id=$_SESSION['id'];
             <tfoot>
               <tr>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
+                <th>Descripción</th>
+                <th>Estado</th>
                 <th>Opciones</th>
               </tr>
             </tfoot>
