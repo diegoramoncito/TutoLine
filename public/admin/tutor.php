@@ -204,7 +204,7 @@ if($id!=0){
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select class="mdb-select md-form">
+                    <select name="categoria" class="custom-select custom-select-sm">
                         <option value="" disabled <?php if(!isset($categoria)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from categorias");
