@@ -12,7 +12,7 @@ if(isset($_POST['nombre'])){
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    include_once('Model/alumno.php');
+    include_once('../Model/alumno.php');
     $element = new Alumno();
     $element->get($id,$db);
     $element->nombre_alumno=$nombre;

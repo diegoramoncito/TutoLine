@@ -14,7 +14,7 @@ if(isset($_POST['nombre'])){
     $password = $_POST['password'];
     $formacion = $_POST['formacion'];
     $categoria = $_POST['categoria'];
-    include_once('Model/tutor.php');
+    include_once('../Model/tutor.php');
     $element = new Tutor();
     $element->get($id,$db);
     $element->nombre_tutor=$nombre;
