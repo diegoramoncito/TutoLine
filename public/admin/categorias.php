@@ -101,8 +101,8 @@ $id=$_SESSION['id'];
             <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
+                <th>Descripción</th>
+                <th>Dificultad</th>
                 <th>Opciones</th>
               </tr>
             </thead>
@@ -112,9 +112,9 @@ $id=$_SESSION['id'];
               foreach($result as $element){
               ?>
               <tr>
-                <td><?php echo $element['nombre_alumno']; ?></td>
-                <td><?php echo $element['apellido_alumno']; ?></td>
-                <td><?php echo $element['email_alumno']; ?></td>
+                <td><?php echo $element['categoria_nombre']; ?></td>
+                <td><?php echo $element['descripcion_categoria']; ?></td>
+                <td><?php echo $element['dificultad']; ?></td>
                 <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php
