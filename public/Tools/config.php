@@ -126,7 +126,7 @@ function adminMenu(){
     <li class="nav-header">Administración</li>
 
     <li class="nav-item">
-      <a href="Controller/default.php?route1=1" class="nav-link">
+      <a href="/admin/categorias.php" class="nav-link">
         <i class="nav-icon fas fa-book"></i>
         <p>
           Categorías
@@ -134,7 +134,7 @@ function adminMenu(){
       </a>
     </li>
     <li class="nav-item">
-      <a href="Controller/default.php?route1=2" class="nav-link">
+      <a href="/admin/alumnos.php" class="nav-link">
         <i class="nav-icon fas fa-user-graduate"></i>
         <p>
           Alumnos
@@ -142,7 +142,7 @@ function adminMenu(){
       </a>
     </li>
     <li class="nav-item">
-      <a href="Controller/default.php?route1=3" class="nav-link">
+      <a href="/admin/tutores.php" class="nav-link">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
         <p>
           Tutores
@@ -150,7 +150,7 @@ function adminMenu(){
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/admin/objetivos.php" class="nav-link">
         <i class="nav-icon fas fa-bullseye"></i>
         <p>
           Objetivos
@@ -158,7 +158,7 @@ function adminMenu(){
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/admin/tareas.php" class="nav-link">
         <i class="nav-icon fas fa-file"></i>
         <p>
           Tareas
