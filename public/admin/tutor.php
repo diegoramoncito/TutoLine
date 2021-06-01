@@ -212,7 +212,7 @@ if($id!=0){
                         <option value="<?php echo $element['id_categoria']; if($categoria == $element['categorias_id_categoria']) echo "selected";?>"><?php echo $element['nombre_categoria']; ?></option>
                         <?php } ?>
                     </select>
-                    <input type="text" class="form-control" placeholder="Categoria" name="categoria" value="<?php echo $categoria; ?>">
+                    
                     <div class="input-group-append">
                         <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
