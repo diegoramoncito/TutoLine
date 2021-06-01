@@ -209,7 +209,7 @@ if($id!=0){
                         <?php
                         $result = $db->fetchAll("select * from categorias");
                         foreach($result as $element){?>
-                        <option value="<?php echo $element['id_categoria']; if($categoria == $element['categorias_id_categoria']) echo "selected";?>"><?php echo $element['nombre_categoria']; ?></option>
+                        <option value="<?php echo $element['id_categoria']; if($categoria == $element['categorias_id_categoria']) echo "selected";?>"><?php echo $element['nombre_categoria']."(".$element['dificultad'].")"; ?></option>
                         <?php } ?>
                     </select>
                     
