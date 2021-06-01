@@ -215,7 +215,7 @@ if($id!=0){
                     
                     <div class="input-group-append">
                         <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+                        <span class="fas fa-list-alt"></span>
                         </div>
                     </div>
                 </div>
