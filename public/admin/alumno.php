@@ -139,7 +139,7 @@ if($id!=0){
           <h3 class="card-title">Alumno</h3>
         </div>
         <div class="card-body">
-            <form action="alumno.php" method="post">
+            <form action="alumno.php?passport=<?php echo $id; ?>" method="post">
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"">
                   <div class="input-group-append">
