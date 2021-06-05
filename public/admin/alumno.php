@@ -5,6 +5,7 @@ if(isset($_GET['passport']))
 else
     $id = 0;
 
+
 if(isset($_POST['nombre'])){
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -18,6 +19,7 @@ if(isset($_POST['nombre'])){
     $element->nombre_alumno=$nombre;
     $element->apellido_alumno=$apellido;
     $element->fecha_nacimiento_alumno=$fecha;
+    $element->telefono_alumno=$telefono;
     $element->email_alumno=$email;
     $element->password_alumno=$password;
     $element->save($db);
@@ -27,7 +29,6 @@ if(isset($_POST['nombre'])){
 if($id!=0){
     $result = $db->fetchAll("select * from alumnos where id_alumno = $id");
     foreach($result as $element){
-        $name = $element['nombre_alumno']." ".$element['apellido_alumno'];
         $nombre = $element['nombre_alumno'];
         $apellido = $element['apellido_alumno'];
         $fecha = $element['fecha_nacimiento_alumno'];

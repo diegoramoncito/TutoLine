@@ -20,6 +20,7 @@ if(isset($_POST['nombre'])){
     $element->nombre_tutor=$nombre;
     $element->apellido_tutor=$apellido;
     $element->fecha_nacimiento_tutor=$fecha;
+    $element->telefono_tutor=$telefono;
     $element->email_tutor=$email;
     $element->password_tutor=$password;
     $element->formacion_academica=$formacion;
@@ -32,7 +33,6 @@ if(isset($_POST['nombre'])){
 if($id!=0){
     $result = $db->fetchAll("select * from tutors where id_tutor = $id");
     foreach($result as $element){
-        $name = $element['nombre_tutor']." ".$element['apellido_tutor'];
         $nombre = $element['nombre_tutor'];
         $apellido = $element['apellido_tutor'];
         $fecha = $element['fecha_nacimiento_tutor'];

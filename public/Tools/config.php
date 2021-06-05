@@ -12,10 +12,29 @@ define('DATABASE_HOST', 'localhost');
 
 $db = new DBPDO();
 
-//Menu options
+//Comon variables
+switch($_SESSION['type']){
+  case "alumno":
+    $id=$_SESSION['id'];
+    $result = $db->fetchAll("select * from alumnos where id_alumno = $id");
+    foreach($result as $element){
+        $name = $element['nombre_alumno']." ".$element['apellido_alumno'];
+    }
+    break;
+  case "tutor":
+    $id=$_SESSION['id'];
+    $result = $db->fetchAll("select * from tutors where id_tutor = $id");
+    foreach($result as $element){
+        $name = $element['nombre_tutor']." ".$element['apellido_tutor'];
+    }
+    break;
+  case default:
+    $name = "Administrador";
+}
+$name = "Administrador";
 
 
-
+//Build functions
 function alumnoMenu(){
     echo '<li class="nav-header">Tutorías</li>
 
