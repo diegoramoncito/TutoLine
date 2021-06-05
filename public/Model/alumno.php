@@ -54,7 +54,7 @@ class Alumno{
     }
 
     function delete($db){
-        $query = "delete alumnos where id_alumno = $this->id_alumno";
+        $query = "delete from alumnos where id_alumno = $this->id_alumno";
         $db->execute($query);
     }
     

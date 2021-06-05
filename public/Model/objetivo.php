@@ -50,7 +50,7 @@ class Objetivo{
     }
 
     function delete($db){
-        $query = "delete objetivos where id_objetivo = $this->id_objetivo";
+        $query = "delete from objetivos where id_objetivo = $this->id_objetivo";
         $db->execute($query);
     }
     

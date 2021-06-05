@@ -46,7 +46,7 @@ class Categoria{
     }
 
     function delete($db){
-        $query = "delete categorias where id_categoria = $this->id_categoria";
+        $query = "delete from categorias where id_categoria = $this->id_categoria";
         $db->execute($query);
     }
     

@@ -62,7 +62,7 @@ class Tarea{
     }
 
     function delete($db){
-        $query = "delete tareas where id_tarea = $this->id_tarea";
+        $query = "delete from tareas where id_tarea = $this->id_tarea";
         $db->execute($query);
     }
 }

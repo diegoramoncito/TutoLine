@@ -60,7 +60,7 @@ class Tutor{
     }
 
     function delete($db){
-        $query = "delete tutors where id_tutor = $this->id_tutor";
+        $query = "delete from tutors where id_tutor = $this->id_tutor";
         $db->execute($query);
     }
 }
