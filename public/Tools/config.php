@@ -217,7 +217,7 @@ function footer(){
   <!-- Page specific script -->
   <script>
     $(function () {
-      $('#dataTable').DataTable({
+      $(\'#dataTable\').DataTable({
         "paging": true,
         "lengthChange": false,
         "searching": true,
