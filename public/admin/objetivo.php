@@ -116,7 +116,7 @@ if($id!=0){
                         <option value="" disabled <?php if(!isset($estado)) echo "selected"; ?>>Seleccione</option>
                         <option value="Por completar" <?php if($estado == "Por completar") echo "selected";?>>Por completar</option>
                         <option value="En progreso" <?php if($estado == "En progreso") echo "selected";?>>En progreso</option>
-                        <option value="Terminado" <?php if($estado == "Terminado") echo "selected";?>>Terminado</option>
+                        <option value="Completado" <?php if($estado == "Completado") echo "selected";?>>Completado</option>
                     </select>
                     
                     <div class="input-group-append">
