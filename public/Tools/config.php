@@ -13,7 +13,9 @@ define('DATABASE_HOST', 'localhost');
 $db = new DBPDO();
 
 //Comon variables
-switch($_SESSION['type']){
+$type = $_SESSION['type'];
+error_log($type);
+switch($type){
   case "alumno":
     $id=$_SESSION['id'];
     $result = $db->fetchAll("select * from alumnos where id_alumno = $id");
