@@ -28,7 +28,7 @@ switch($_SESSION['type']){
         $name = $element['nombre_tutor']." ".$element['apellido_tutor'];
     }
     break;
-  case default:
+  default:
     $name = "Administrador";
 }
 $name = "Administrador";
