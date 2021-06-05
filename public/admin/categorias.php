@@ -115,7 +115,7 @@ $id=$_SESSION['id'];
                 <td><?php echo $element['nombre_categoria']; ?></td>
                 <td><?php echo $element['descripcion_categoria']; ?></td>
                 <td><?php echo $element['dificultad']; ?></td>
-                <td><a href="categoria.php?passport=<?php echo $element['id_categoria']; ?>" class="btn btn-info">Editar</a><a href="delete.php?route2=1&passport=<?php echo $element['id_categoria']; ?>" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="categoria.php?passport=<?php echo $element['id_categoria']; ?>" class="btn btn-info">Editar</a><a href="delete.php?route1=2&passport=<?php echo $element['id_categoria']; ?>" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php
               }
