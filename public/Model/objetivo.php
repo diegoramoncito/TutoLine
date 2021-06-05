@@ -22,10 +22,12 @@ class Objetivo{
         }else{
             $query = "insert into objetivos(nombre_objetivo,descripcion_objetivo,alumno_id_alumno,tutor_id_tutor)values('','',(select min(id_alumno) from alumnos),(select min(id_tutor) from tutors))";
             $db->execute($query);
+            error_log($query);
             $result = $db->fetchAll('SELECT LAST_INSERT_ID()');
             foreach($result as $element){
                 $this->id_objetivo = $element['LAST_INSERT_ID()'];
             }
+            error_log($this->id_objetivo);
         }
     }
 
