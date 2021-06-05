@@ -14,7 +14,6 @@ $db = new DBPDO();
 
 //Comon variables
 $type = $_SESSION['type'];
-error_log($type);
 switch($type){
   case "alumno":
     $id=$_SESSION['id'];
@@ -33,7 +32,6 @@ switch($type){
   default:
     $name = "Administrador";
 }
-$name = "Administrador";
 
 
 //Build functions
