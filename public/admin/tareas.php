@@ -115,7 +115,7 @@ $id=$_SESSION['id'];
                 <td><?php echo $element['nombre_tarea']; ?></td>
                 <td><?php echo $element['descripcion_tarea']; ?></td>
                 <td><?php echo $element['estado_tarea']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="tarea.php?passport=<?php echo $element['id_tarea']; ?>" class="btn btn-info">Editar</a><a href="delete.php?route1=4&passport=<?php echo $element['id_tarea']; ?>" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php
               }

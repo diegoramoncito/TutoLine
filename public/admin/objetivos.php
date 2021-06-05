@@ -115,7 +115,7 @@ $id=$_SESSION['id'];
                 <td><?php echo $element['nombre_objetivo']; ?></td>
                 <td><?php echo $element['descripcion_objetivo']; ?></td>
                 <td><?php echo $element['estado_objetivo']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="objetivo.php?passport=<?php echo $element['id_objetivo']; ?>" class="btn btn-info">Editar</a><a href="delete.php?route1=3&passport=<?php echo $element['id_objetivo']; ?>" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php
               }
