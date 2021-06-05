@@ -5,7 +5,7 @@ class Categoria{
     public $id_categoria;
     public $nombre_categoria;
     public $descripcion_categoria;
-    public $dificultad = 0;
+    public $dificultad = "Principiante";
 
     function get($id, $db){
         if($id>0){

@@ -86,10 +86,10 @@ if($id!=0){
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Alumno</h3>
+          <h3 class="card-title">Categoría</h3>
         </div>
         <div class="card-body">
-            <form action="alumno.php?passport=<?php echo $id; ?>" method="post">
+            <form action="categoria.php?passport=<?php echo $id; ?>" method="post">
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"">
                   <div class="input-group-append">
@@ -99,7 +99,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Apellido" name="apellido" value="<?php echo $apellido; ?>">
+                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -107,36 +107,18 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="date" class="form-control" placeholder="Fecha nacimiento" name="fecha" value="<?php echo $fecha; ?>">
-                  <div class="input-group-append">
-                      <div class="input-group-text">
-                      <span class="fas fa-calendar"></span>
-                      </div>
-                  </div>
-                </div>
-                <div class="input-group mb-3">
-                  <input type="tel" class="form-control" placeholder="Telefono" name="telefono" value="<?php echo $telefono; ?>">
-                  <div class="input-group-append">
-                      <div class="input-group-text">
-                      <span class="fas fa-phone"></span>
-                      </div>
-                  </div>
-                </div>
-                <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>">
-                  <div class="input-group-append">
-                      <div class="input-group-text">
-                      <span class="fas fa-envelope"></span>
-                      </div>
-                  </div>
-                </div>
-                <div class="input-group mb-3">
-                  <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo $password; ?>">
-                  <div class="input-group-append">
-                      <div class="input-group-text">
-                      <span class="fas fa-lock"></span>
-                      </div>
-                  </div>
+                    <select name="dificultad" id="dificultad" class="custom-select custom-select-sm">
+                        <option value="" disabled <?php if(!isset($dificultad)) echo "selected"; ?>>Seleccione</option>
+                        <option value="Principiante" <?php if($dificultad == "Principiante") echo "selected";?>>Principiante</option>
+                        <option value="Medio" <?php if($dificultad == "Medio") echo "selected";?>>Medio</option>
+                        <option value="Avanzado" <?php if($dificultad == "Avanzado") echo "selected";?>>Avanzado</option>
+                    </select>
+                    
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                        <span class="fas fa-list-alt"></span>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-4">
