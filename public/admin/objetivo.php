@@ -17,7 +17,7 @@ if(isset($_POST['nombre'])){
     $element->nombre_objetivo=$nombre;
     $element->descripcion_objetivo=$descripcion;
     $element->estado_objetivo=$estado;
-    $element->alumno_id_objetivo=$alumno;
+    $element->alumno_id_alumno=$alumno;
     $element->tutor_id_tutor=$tutor;
     $element->save($db);
     header("Location: /admin/objetivos.php");
@@ -29,7 +29,7 @@ if($id!=0){
         $nombre = $element['nombre_objetivo'];
         $descripcion = $element['descripcion_objetivo'];
         $estado = $element['estado_objetivo'];
-        $alumno = $element['alumno_id_objetivo'];
+        $alumno = $element['alumno_id_alumno'];
         $tutor = $element['tutor_id_tutor'];
     }
 }
