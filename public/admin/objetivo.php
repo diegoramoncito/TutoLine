@@ -28,9 +28,9 @@ if($id!=0){
     foreach($result as $element){
         $nombre = $element['nombre_objetivo'];
         $descripcion = $element['descripcion_objetivo'];
-        $estado = $_POST['estado_objetivo'];
-        $alumno = $_POST['alumno_id_objetivo'];
-        $tutor = $_POST['tutor_id_tutor'];
+        $estado = $element['estado_objetivo'];
+        $alumno = $element['alumno_id_objetivo'];
+        $tutor = $element['tutor_id_tutor'];
     }
 }
 
@@ -131,7 +131,7 @@ if($id!=0){
                         <?php
                         $result = $db->fetchAll("select * from alumnos");
                         foreach($result as $element){?>
-                        <option value="<?php echo $element['id_alumno'];?>" <?php if($alumno == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].")"; ?></option>
+                        <option value="<?php echo $element['id_alumno'];?>" <?php if($alumno == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].""; ?></option>
                         <?php } ?>
                     </select>
                     
@@ -146,7 +146,7 @@ if($id!=0){
                         <?php
                         $result = $db->fetchAll("select * from tutors");
                         foreach($result as $element){?>
-                        <option value="<?php echo $element['id_tutor'];?>" <?php if($tutor == $element['id_tutor']) echo "selected";?>><?php echo $element['nombre_tutor']." ".$element['apellido_tutor'].")"; ?></option>
+                        <option value="<?php echo $element['id_tutor'];?>" <?php if($tutor == $element['id_tutor']) echo "selected";?>><?php echo $element['nombre_tutor']." ".$element['apellido_tutor'].""; ?></option>
                         <?php } ?>
                     </select>
                     

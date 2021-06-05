@@ -44,7 +44,7 @@ class Objetivo{
         $query .= ",descripcion_objetivo = '$this->descripcion_objetivo'";
         $query .= ",estado_objetivo = '$this->estado_objetivo'";
         $query .= ",alumno_id_objetivo = $this->alumno_id_objetivo";
-        $query .= ",tutor_id_tutor = '$this->tutor_id_tutor'";
+        $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
         $query .= " where id_objetivo = $this->id_objetivo";
         $db->execute($query);
     }
