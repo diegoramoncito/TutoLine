@@ -102,7 +102,7 @@ if($id!=0){
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Alumno</h3>
+          <h3 class="card-title">Tutor</h3>
         </div>
         <div class="card-body">
             <form action="tutor.php?passport=<?php echo $id; ?>" method="post">
