@@ -12,7 +12,10 @@ if(isset($_POST['nombre'])){
     $alumno = $_POST['alumno'];
     $tutor = $_POST['tutor'];
     $fecha = $_POST['fecha'];
-    $calificacion = $_POST['calificacion'];
+    if(is_numeric($_POST['calificacion']))
+        $calificacion = number_format($_POST['calificacion'], 2);
+    else
+        $calificacion = 0;
     $comentarios = $_POST['comentarios'];
     $entregable = $_POST['entregable'];
     include_once('../Model/tarea.php');
