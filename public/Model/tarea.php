@@ -31,10 +31,12 @@ class Tarea{
         }else{
             $query = "insert into tareas(nombre_tarea,descripcion_tarea,calificacion_tarea,comentarios_tarea,entregable_tarea)values('','',1,'','')";
             $db->execute($query);
+            error_log($query);
             $result = $db->fetchAll('SELECT LAST_INSERT_ID()');
             foreach($result as $element){
                 $this->id_tarea = $element['LAST_INSERT_ID()'];
             }
+            error_log($this->id_tarea);
         }
     }
 
