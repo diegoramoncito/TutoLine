@@ -163,7 +163,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <label for="formFileLg" class="form-label">Seleccione un archivo</label>
+                  <label for="entregable" class="form-label">Seleccione un archivo</label>
                   <input class="form-control form-control-lg" id="entregable" type="file" value="<?php echo $entregable; ?>" />
                   <div class="input-group-append">
                       <div class="input-group-text">
