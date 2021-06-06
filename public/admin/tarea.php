@@ -25,7 +25,7 @@ if(isset($_POST['nombre'])){
     $element->calificacion_tarea=$calificacion;
     $element->comentarios_tarea=$comentarios;
     $element->entregable_tarea=$entregable;
-    $element->alumno_id_tarea=$alumno;
+    $element->alumno_id_alumno=$alumno;
     $element->tutor_id_tutor=$tutor;
     $element->save($db);
     header("Location: /admin/tareas.php");
@@ -41,7 +41,7 @@ if($id!=0){
         $calificacion = $element['calificacion_tarea'];
         $comentarios = $element['comentarios_tarea'];
         $entregable = $element['entregable_tarea'];
-        $alumno = $element['alumno_id_tarea'];
+        $alumno = $element['alumno_id_alumno'];
         $tutor = $element['tutor_id_tutor'];
         $fecha = explode(" ", $fecha)[0];
     }

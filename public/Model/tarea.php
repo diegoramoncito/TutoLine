@@ -10,7 +10,7 @@ class Tarea{
     public $calificacion_tarea;
     public $comentarios_tarea;
     public $entregable_tarea;
-    public $alumno_id_tarea;
+    public $alumno_id_alumno;
     public $tutor_id_tutor;
 
     function get($id, $db){
@@ -25,7 +25,7 @@ class Tarea{
                 $this->calificacion_tarea = $element['calificacion_tarea'];
                 $this->comentarios_tarea = $element['comentarios_tarea'];
                 $this->entregable_tarea = $element['entregable_tarea'];
-                $this->alumno_id_tarea = $element['alumno_id_tarea'];
+                $this->alumno_id_alumno = $element['alumno_id_alumno'];
                 $this->tutor_id_tutor = $element['tutor_id_tutor'];
             }
         }else{
@@ -55,7 +55,7 @@ class Tarea{
         $query .= ",calificacion_tarea = $this->calificacion_tarea";
         $query .= ",comentarios_tarea = '$this->comentarios_tarea'";
         $query .= ",entregable_tarea = '$this->entregable_tarea'";
-        $query .= ",alumno_id_tarea = '$this->alumno_id_tarea'";
+        $query .= ",alumno_id_alumno = '$this->alumno_id_alumno'";
         $query .= ",tutor_id_tutor = '$this->tutor_id_tutor'";
         $query .= " where id_tarea = $this->id_tarea";
         $db->execute($query);
