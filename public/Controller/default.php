@@ -101,6 +101,7 @@ function register(){
             $tutor->fecha_nacimiento_tutor=$fechaNacimiento;
             $tutor->email_tutor=$email;
             $tutor->password_tutor=$password;
+            $tutor->categorias_id_categoria = "(select min(id_categoria) from categorias)";
             $tutor->save($db);
             $destination = "/login.html";
         }
