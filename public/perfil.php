@@ -202,13 +202,21 @@ $fecha = explode(" ", $fecha)[0];
                     </div>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Categoria" name="categoria" value="<?php echo $categoria; ?>">
+                    <select name="categoria" id="categoria" class="custom-select custom-select-sm">
+                        <option value="" disabled <?php if(!isset($categoria)) echo "selected"; ?>>Seleccione</option>
+                        <?php
+                        $result = $db->fetchAll("select * from categorias");
+                        foreach($result as $element){?>
+                        <option value="<?php echo $element['id_categoria'];?>" <?php if($categoria == $element['id_categoria']) echo "selected";?>><?php echo $element['nombre_categoria']."(".$element['dificultad'].")"; ?></option>
+                        <?php } ?>
+                    </select>
+                    
                     <div class="input-group-append">
                         <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+                        <span class="fas fa-list-alt"></span>
                         </div>
                     </div>
-                  </div>
+                </div>
                 <?php } ?>
                 <!-- /.col -->
                 <div class="col-4">
