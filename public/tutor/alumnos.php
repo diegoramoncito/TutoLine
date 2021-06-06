@@ -59,9 +59,9 @@ include_once('../Tools/config.php');
 
       <!-- Default box -->
       <div class="card">
-        <div class="card-header">
+        <!--div class="card-header">
         <a href="alumno.php?id=0" class="btn btn-primary">Crear</a>
-        </div>
+        </div-->
         <div class="card-body">
           <table id="dataTable" class="table table-bordered table-hover">
             <thead>
@@ -74,14 +74,14 @@ include_once('../Tools/config.php');
             </thead>
             <tbody>
               <?php
-              $result = $db->fetchAll("select * from alumnos");
+              $result = $db->fetchAll("select *,(select id from tutoralumno where id_tutor = $id and id_alumno = al.id_alumno) as id_tutoria from alumnos al where id_alumno in (select id_alumno from tutoralumno where id_tutor = $id)");
               foreach($result as $element){
               ?>
               <tr>
                 <td><?php echo $element['nombre_alumno']; ?></td>
                 <td><?php echo $element['apellido_alumno']; ?></td>
                 <td><?php echo $element['email_alumno']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="delete.php?passport=<?php echo $element['id_tutoria']; ?>" class="btn btn-danger">Cancelar tutoría</a></td>
               </tr>
               <?php
               }
