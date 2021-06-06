@@ -59,6 +59,7 @@ class Tarea{
         $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
         $query .= " where id_tarea = $this->id_tarea";
         $db->execute($query);
+        error_log($query);
     }
 
     function delete($db){

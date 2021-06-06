@@ -147,7 +147,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Calificación" name="calificacion" value="<?php echo $calificacion; ?>">
+                  <input type="number" step="any" class="form-control" placeholder="Calificación" name="calificacion" value="<?php echo $calificacion; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
