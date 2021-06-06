@@ -56,7 +56,7 @@ function alumnoMenu(){
     </li>
     <li class="nav-item">
       <a href="/alumno/objetivos.php" class="nav-link">
-        <i class="nav-icon fas fa-user-graduate"></i>
+        <i class="nav-icon fas fa-bullseye"></i>
         <p>
           Objetivos
         </p>

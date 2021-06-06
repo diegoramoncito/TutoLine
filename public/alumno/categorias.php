@@ -61,9 +61,6 @@ include_once('../Tools/config.php');
         <div class="card-header">
           <h3 class="card-title">Tutorias</h3>
         </div>
-        <div class="card-header">
-        <a href="categorias.php" class="btn btn-primary">Agregar nueva</a>
-        </div>
         <div class="card-body">
           <table id="dataTable" class="table table-bordered table-hover">
             <thead>
@@ -71,17 +68,19 @@ include_once('../Tools/config.php');
                 <th>Nombre</th>
                 <th>Materia</th>
                 <th>Dificultad</th>
+                <th>Perfil</th>
                 <th>Opciones</th>
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select *,(select nombre_categoria from categoria where id_categoria = categoria_id_categoria) materia, (select dificultad from categoria where id_categoria = categoria_id_categoria) dificultad from tutor where id_tutor in (select distinct id_tutor from tutoralumno where id_alumno = $id)");
+              <?php $result = $db->fetchAll("select *,(select nombre_categoria from categoria where id_categoria = categoria_id_categoria) materia, (select dificultad from categoria where id_categoria = categoria_id_categoria) dificultad from tutor");
                     foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_tutor']." ". $element['apellido_tutor']; ?></td>
                 <td><?php echo $element['materia']; ?></td>
                 <td><?php echo $element['dificultad']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-danger">Contratar</a></td>
+                <td><?php echo $element['formacion_academica']; ?></td>
+                <td><a href="controller.php?route2=1&passport=<?php echo $element['id_tutor']; ?>" class="btn btn-danger">Contratar</a></td>
               </tr>
               <?php } ?>
             </tbody>
@@ -90,6 +89,7 @@ include_once('../Tools/config.php');
                 <th>Nombre</th>
                 <th>Materia</th>
                 <th>Dificultad</th>
+                <th>Perfil</th>
                 <th>Opciones</th>
               </tr>
             </tfoot>
