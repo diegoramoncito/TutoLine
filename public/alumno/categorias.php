@@ -73,7 +73,7 @@ include_once('../Tools/config.php');
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select *,(select nombre_categoria from categorias where id_categoria = categorias_id_categoria) materia, (select dificultad from categorias where id_categoria = categorias_id_categoria) dificultad from tutors");
+              <?php $result = $db->fetchAll("select *,(select nombre_categoria from categorias where id_categoria = categorias_id_categoria) materia, (select dificultad from categorias where id_categoria = categorias_id_categoria) dificultad from tutors where id_tutor not in (select distinct id_tutor from tutoralumno where id_alumno=$id))");
                     foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_tutor']." ". $element['apellido_tutor']; ?></td>
