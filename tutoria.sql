@@ -23,6 +23,7 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS tutoralumno;
 DROP TABLE IF EXISTS objetivos;
 DROP TABLE IF EXISTS tareas;
 DROP TABLE IF EXISTS tutors;
@@ -351,9 +352,30 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES(1, 'Mario', 'mario-andree@hotmail.com', NULL, '$2y$10$n0S2xge.e9VInHfjbocC9e7FvI4mm3tu5XWV6CRmzQfvl8Nxnco.2', NULL, NULL, 'sOQSPVxgD9v9CzgCFPXlGzrZez58WHoAzDwYCXn2wATlMVAOnLAU1xEb7fNm', 1, NULL, '2021-05-01 05:07:52', '2021-05-01 05:07:53');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tutoralumno`
+--
+
+CREATE TABLE `tutoralumno` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6,
+  `id_tutor` bigint(20) UNSIGNED NOT NULL,
+  `id_alumno` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `alumnos`
+--
+ALTER TABLE `tutoralumno`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tutoralumno_alumno` (`id_alumno`),
+  ADD KEY `tutoralumno_tutor` (`id_tutor`);
 
 --
 -- Indices de la tabla `alumnos`
@@ -532,6 +554,13 @@ ALTER TABLE `users`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `tutoralumno`
+--
+ALTER TABLE `tutoralumno`
+  ADD CONSTRAINT `tutoralumno_alumno` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`) ON DELETE CASCADE,
+  ADD CONSTRAINT `tutoralumno_tutor` FOREIGN KEY (`id_tutor`) REFERENCES `tutors` (`id_tutor`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `objetivos`
