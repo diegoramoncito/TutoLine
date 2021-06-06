@@ -359,7 +359,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 --
 
 CREATE TABLE `tutoralumno` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT=6,
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_tutor` bigint(20) UNSIGNED NOT NULL,
   `id_alumno` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
