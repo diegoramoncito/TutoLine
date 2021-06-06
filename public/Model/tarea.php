@@ -31,12 +31,10 @@ class Tarea{
         }else{
             $query = "insert into tareas(nombre_tarea,descripcion_tarea,calificacion_tarea,comentarios_tarea,entregable_tarea,estado_tarea)values('','',1,'','','')";
             $db->execute($query);
-            error_log($query);
             $result = $db->fetchAll('SELECT LAST_INSERT_ID()');
             foreach($result as $element){
                 $this->id_tarea = $element['LAST_INSERT_ID()'];
             }
-            error_log($this->id_tarea);
         }
     }
 
@@ -57,11 +55,10 @@ class Tarea{
         $query .= ",calificacion_tarea = $this->calificacion_tarea";
         $query .= ",comentarios_tarea = '$this->comentarios_tarea'";
         $query .= ",entregable_tarea = '$this->entregable_tarea'";
-        $query .= ",alumno_id_alumno = '$this->alumno_id_alumno'";
-        $query .= ",tutor_id_tutor = '$this->tutor_id_tutor'";
+        $query .= ",alumno_id_alumno = $this->alumno_id_alumno";
+        $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
         $query .= " where id_tarea = $this->id_tarea";
         $db->execute($query);
-        error_log($query);
     }
 
     function delete($db){
