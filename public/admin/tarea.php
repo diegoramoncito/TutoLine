@@ -163,7 +163,8 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Entregable" name="entregable" value="<?php echo $entregable; ?>">
+                  <label for="formFileLg" class="form-label">Seleccione un archivo</label>
+                  <input class="form-control form-control-lg" id="entregable" type="file" value="<?php echo $entregable; ?>" />
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
