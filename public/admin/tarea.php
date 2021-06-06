@@ -11,6 +11,10 @@ if(isset($_POST['nombre'])){
     $estado = $_POST['estado'];
     $alumno = $_POST['alumno'];
     $tutor = $_POST['tutor'];
+    $fecha = $_POST['fecha'];
+    $calificacion = $_POST['calificacion'];
+    $comentarios = $_POST['comentarios'];
+    $entregable = $_POST['entregable'];
     include_once('../Model/tarea.php');
     $element = new Tarea();
     $element->get($id,$db);
