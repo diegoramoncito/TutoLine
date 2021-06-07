@@ -87,7 +87,7 @@ include_once('../Tools/config.php');
                     $calificacion = number_format($element['calificacion_tarea'], 2);
                   else
                     $calificacion = 0;
-                  if($calificacion > 0){
+                  if($calificacion == 0){
                     $editar = "tarea.php?";
                     $calificar = "tarea.php?";
                   }
