@@ -35,7 +35,16 @@ function tutoria($id,$idElement){
     GLOBAL $destination;
     GLOBAL $db;
     $destination = "/alumno/tutorias.php";
-    $result = $db->execute("insert into tutoralumno(id_alumno,id_tutor)values($id,$idElement)");
+    $result = $db->fetchAll("select * from tutoralumno where id_alumno = $id and id_tutor = $idElement");
+    foreach($result as $element){
+        $idTutoralumno = $element['id'];
+    }
+    //Borrar tareas
+    $result = $db->execute("delete from tareas where alumno_id_alumno = $id and tutor_id_tutor = $idElement");
+    //Borrar objetivos
+    $result = $db->execute("delete from objetivos where alumno_id_alumno = $id and tutor_id_tutor = $idElement");
+    //Borrar asignacion de tutor a alumno
+    $result = $db->execute("delete from tutoralumno where id = $idTutoralumno");
 }
 function categoria($id){
     GLOBAL $destination;
