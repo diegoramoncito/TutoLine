@@ -81,7 +81,7 @@ include_once('../Tools/config.php');
                 <td><?php echo $element['nombre_tutor']." ". $element['apellido_tutor']; ?></td>
                 <td><?php echo $element['materia']; ?></td>
                 <td><?php echo $element['dificultad']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-danger">Contratar</a></td>
+                <td><a href="controller.php?route2=2&passport=<?php echo $element['id_tutor']; ?>" class="btn btn-danger">Cancelar Tutoría</a></td>
               </tr>
               <?php } ?>
             </tbody>

@@ -81,7 +81,7 @@ include_once('../Tools/config.php');
                 <td><?php echo $element['nombre_alumno']; ?></td>
                 <td><?php echo $element['apellido_alumno']; ?></td>
                 <td><?php echo $element['email_alumno']; ?></td>
-                <td><a href="delete.php?passport=<?php echo $element['id_tutoria']; ?>" class="btn btn-danger">Cancelar tutoría</a></td>
+                <td><a href="controller.php?route3=1&passport=<?php echo $element['id_tutoria']; ?>" class="btn btn-danger">Cancelar tutoría</a></td>
               </tr>
               <?php
               }
