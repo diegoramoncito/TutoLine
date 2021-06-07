@@ -57,15 +57,14 @@ include_once('../Tools/config.php');
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Tareas</h3>
-          <a href="tarea.php?id=0" class="btn btn-primary">Crear</a>
+          <!--h3 class="card-title">Tareas</h3-->
+          <a href="tarea.php?id=0" class="btn btn-primary">Nueva Tarea</a>
         </div>
         <div class="card-body">
           <table id="dataTable" class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Alumno</th>
-                <th>Acción</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Calificación</th>
@@ -78,8 +77,7 @@ include_once('../Tools/config.php');
               foreach($result as $element){
               ?>
               <tr>
-                <td><?php echo $element['alumno']; ?></td>
-                <td><a href="tarea.php?passport=<?php echo $element['alumno_id_alumno']; ?>" class="btn btn-info">Editar</a></td>
+                <td><?php echo $element['alumno']; ?><a href="tarea.php?passport=<?php echo $element['alumno_id_alumno']; ?>" class="btn btn-info">Nueva tarea</a></td>
                 <td><?php echo $element['nombre_tarea']; ?></td>
                 <td><?php echo $element['descripcion_tarea']; ?></td>
                 <td><?php echo $element['calificacion_tarea']; ?></td>
@@ -103,7 +101,6 @@ include_once('../Tools/config.php');
             <tfoot>
               <tr>
                 <th>Alumno</th>
-                <th>Acción</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Calificación</th>
