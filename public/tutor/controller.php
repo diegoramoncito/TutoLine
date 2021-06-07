@@ -34,7 +34,7 @@ header("Location: $destination");
 function alumno($id,$idElement){
     GLOBAL $destination;
     GLOBAL $db;
-    $destination = "/tutor/alumnos.php";
+    $destination = "/alumno/tutorias.php";
     $result = $db->fetchAll("select * from tutoralumno where id = $idElement");
     foreach($result as $element){
         $idAlumno = $element['id_alumno'];
