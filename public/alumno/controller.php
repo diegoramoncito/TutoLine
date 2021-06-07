@@ -10,19 +10,19 @@ switch($ruta){
         tutoria($id,$idElement);
         break;
     case 2:
-        categoria($id);
+        removeTutoria($id,$idElement);
         break;
     case 3:
-        objetivo($id);
+        def($id);
         break;
     case 4:
-        tarea($id);
+        def($id);
         break;
     case 5:
-        tutor($id);
+        def($id);
         break;
     default:
-        fnDefault();
+        def();
 }
 
 
@@ -32,6 +32,12 @@ header("Location: $destination");
 
 
 function tutoria($id,$idElement){
+    GLOBAL $destination;
+    GLOBAL $db;
+    $destination = "/alumno/tutorias.php";
+    $result = $db->execute("insert into tutoralumno(id_alumno,id_tutor)values($id,$idElement)");
+}
+function removeTutoria($id,$idElement){
     GLOBAL $destination;
     GLOBAL $db;
     $destination = "/alumno/tutorias.php";
@@ -46,42 +52,13 @@ function tutoria($id,$idElement){
     //Borrar asignacion de tutor a alumno
     $result = $db->execute("delete from tutoralumno where id = $idTutoralumno");
 }
-function categoria($id){
-    GLOBAL $destination;
-    GLOBAL $db;
-    include_once('../Model/categoria.php');
-    $destination = "/admin/categorias.php";
-    $element = new Categoria();
-    $element->get($id,$db);
-    $element->delete($db);
-}
-function objetivo($id){
+function def($id){
     GLOBAL $destination;
     GLOBAL $db;
     include_once('../Model/objetivo.php');
-    $destination = "/admin/objetivos.php";
+    $destination = "/alumno/tutorias.php";
     $element = new Objetivo();
     $element->get($id,$db);
     $element->delete($db);
 }
-function tarea($id){
-    GLOBAL $destination;
-    GLOBAL $db;
-    include_once('../Model/tarea.php');
-    $destination = "/admin/tareas.php";
-    $element = new Tarea();
-    $element->get($id,$db);
-    $element->delete($db);
-}
-function tutor($id){
-    GLOBAL $destination;
-    GLOBAL $db;
-    include_once('../Model/tutor.php');
-    $destination = "/admin/tutores.php";
-    $element = new Tutor();
-    $element->get($id,$db);
-    $element->delete($db);
-}
-
-
 ?>
