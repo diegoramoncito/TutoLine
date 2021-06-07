@@ -82,7 +82,7 @@ include_once('../Tools/config.php');
                 <td><?php echo $element['descripcion_tarea']; ?></td>
                 <td><?php echo $element['calificacion_tarea']; ?></td>
                 <?php
-                  $editar = "#"; $calificar ="#";
+                  $editar = "#"; $calificar ="#"; $disabled = " disabled";
                   if(is_numeric($element['calificacion_tarea']))
                     $calificacion = number_format($element['calificacion_tarea'], 2);
                   else
@@ -90,9 +90,10 @@ include_once('../Tools/config.php');
                   if($calificacion == 0){
                     $editar = "tarea.php?";
                     $calificar = "tarea.php?";
+                    $disabled = "";
                   }
                 ?>
-                <td><a href="<?php echo $editar; ?>" class="btn btn-info">Editar</a><a href="<?php echo $calificar; ?>" class="btn btn-danger">Calificar</a></td>
+                <td><a href="<?php echo $editar; ?>" class="btn btn-info<?php echo $disabled;?>">Editar</a><a href="<?php echo $calificar; ?>" class="btn btn-danger<?php echo $disabled;?>">Calificar</a></td>
               </tr>
               <?php
               }
