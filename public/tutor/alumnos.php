@@ -59,9 +59,9 @@ include_once('../Tools/config.php');
 
       <!-- Default box -->
       <div class="card">
-        <!--div class="card-header">
-        <a href="alumno.php?id=0" class="btn btn-primary">Crear</a>
-        </div-->
+        <div class="card-header">
+          <h3 class="card-title">Alumnos</h3>
+        </div>
         <div class="card-body">
           <table id="dataTable" class="table table-bordered table-hover">
             <thead>
