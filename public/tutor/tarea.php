@@ -152,8 +152,8 @@ if($id!=0){
                         </div>
                     </div>
                 </div>
-                <div class="input-group mb-3"<?php if($mode == "editar") echo "disabled"; ?>>
-                  <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>">
+                <div class="input-group mb-3">
+                  <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>" <?php if($mode == "calificar") echo "disabled"; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-calendar"></span>
@@ -177,7 +177,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3" disabled>
-                  <input type="text" class="form-control" placeholder="Entregable" name="entregable" value="<?php echo $entregable; ?>">
+                  <input type="text" class="form-control" placeholder="Entregable" name="entregable" value="<?php echo $entregable; ?>" <?php if($mode == "calificar") echo "disabled"; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
