@@ -7,9 +7,9 @@ else
     $id = 0;
 
 if(isset($_GET['alumno']))
-    $idAlumno=$_GET['alumno'];
+    $alumno=$_GET['alumno'];
 else
-    $idAlumno = 0;
+    $alumno = 0;
 
 if(isset($_GET['mode']))
     $mode=$_GET['mode'];
@@ -186,11 +186,11 @@ if($id!=0){
                 </div>
                 <div class="input-group mb-3">
                     <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo "disabled"; ?>>
-                        <option value="" disabled <?php if(!isset($idTutor)) echo "selected"; ?>>Seleccione</option>
+                        <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from alumnos");
                         foreach($result as $element){?>
-                        <option value="<?php echo $element['id_alumno'];?>" <?php if($idTutor == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].""; ?></option>
+                        <option value="<?php echo $element['id_alumno'];?>" <?php if($alumno == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].""; ?></option>
                         <?php } ?>
                     </select>
                     
