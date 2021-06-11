@@ -83,11 +83,8 @@ include_once('../Tools/config.php');
                 <td><?php echo $element['calificacion_tarea']; ?></td>
                 <?php
                   $editar = "#"; $calificar ="#"; $disabled = " disabled";
-                  if(is_numeric($element['calificacion_tarea']))
-                    $calificacion = number_format($element['calificacion_tarea'], 2);
-                  else
-                    $calificacion = 0;
-                  if($calificacion == 0){
+                  $estado = $element['estado_tarea'];
+                  if($estado == "Completado"){
                     $editar = "tarea.php?passport=".$element['id_tarea']."&mode=editar";
                     $calificar = "tarea.php?passport=".$element['id_tarea']."&mode=calificar";
                     $disabled = "";
