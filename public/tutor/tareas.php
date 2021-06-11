@@ -88,8 +88,8 @@ include_once('../Tools/config.php');
                   else
                     $calificacion = 0;
                   if($calificacion == 0){
-                    $editar = "tarea.php?";
-                    $calificar = "tarea.php?";
+                    $editar = "tarea.php?element=".$element['id_tarea']."&action=editar";
+                    $calificar = "tarea.php?element=".$element['id_tarea']."&action=calificar";
                     $disabled = "";
                   }
                 ?>
