@@ -74,12 +74,12 @@ include_once('../Tools/config.php');
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select * from objetivos");
+              <?php $result = $db->fetchAll("select *,(select nombre_alumno + ' ' + apellido_alumno from alumno where id_alumno = alumno_id_alumno) as alumno from objetivos");
                     foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_objetivo']; ?></td>
                 <td><?php echo $element['descripcion_objetivo']; ?></td>
-                <td><?php echo $element['alumno_id_alumno']; ?></td>
+                <td><?php echo $element['alumno']; ?></td>
                 <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php } ?>
