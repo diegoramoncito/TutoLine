@@ -21,7 +21,6 @@ if(isset($_POST['nombre'])){
     $descripcion = $_POST['descripcion'];
     $estado = $_POST['estado'];
     $alumno = $_POST['alumno'];
-    $tutor = $_POST['tutor'];
     $fecha = $_POST['fecha'];
     if(is_numeric($_POST['calificacion']))
         $calificacion = number_format($_POST['calificacion'], 2);
