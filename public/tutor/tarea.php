@@ -42,7 +42,7 @@ if(isset($_POST['nombre'])){
     $element->alumno_id_alumno=$alumno;
     $element->tutor_id_tutor=$tutor;
     $element->save($db);
-    header("Location: /admin/tareas.php");
+    header("Location: /tutor/tareas.php");
 }
 
 if($id!=0){
