@@ -21,7 +21,6 @@ if(isset($_POST['nombre'])){
     $descripcion = $_POST['descripcion'];
     $estado = $_POST['estado'];
     $alumno = $_POST['alumno'];
-    $tutor = $_POST['tutor'];
     include_once('../Model/objetivo.php');
     $element = new Objetivo();
     $element->get($id,$db);
