@@ -122,7 +122,7 @@ if($id!=0){
         <div class="card-body">
             <form action="tarea.php?passport=<?php echo $id; ?>" method="post">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"" <?php if($mode == "calificar") echo "disabled"; ?>>
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"" <?php if($mode == "calificar") echo 'disabled="disabled"'; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -130,7 +130,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>" <?php if($mode == "calificar") echo "disabled"; ?>>
+                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>" <?php if($mode == "calificar") echo 'disabled="disabled"'; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -152,7 +152,7 @@ if($id!=0){
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>" <?php if($mode == "calificar") echo "disabled"; ?>>
+                  <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>" <?php if($mode == "calificar") echo 'disabled="disabled"'; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-calendar"></span>
@@ -176,7 +176,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3" disabled>
-                  <input type="text" class="form-control" placeholder="Entregable" name="entregable" value="<?php echo $entregable; ?>" <?php if($mode == "calificar") echo "disabled"; ?>>
+                  <input type="text" class="form-control" placeholder="Entregable" name="entregable" value="<?php echo $entregable; ?>" <?php if($mode == "calificar") echo 'disabled="disabled"'; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -184,7 +184,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo "disabled"; ?>>
+                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo 'disabled="disabled"'; ?>>
                         <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from alumnos where id_alumno in (select distinct id_alumno from tutoralumno where id_tutor = $tutor)");
