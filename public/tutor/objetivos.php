@@ -60,8 +60,9 @@ include_once('../Tools/config.php');
 
       <!-- Default box -->
       <div class="card">
-        <div class="card-header">
-          
+      <div class="card-header">
+          <!--h3 class="card-title">Tareas</h3-->
+          <a href="objetivo.php?id=0" class="btn btn-primary">Nuevo Objetivo</a>
         </div>
         <div class="card-body">
           <table id="dataTable" class="table table-bordered table-hover">
@@ -74,13 +75,13 @@ include_once('../Tools/config.php');
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select *,(select concat(nombre_alumno,' ',apellido_alumno) from alumnos where id_alumno= alumno_id_alumno) as alumno from objetivos");
+              <?php $result = $db->fetchAll("select *,(select concat(nombre_alumno,' ',apellido_alumno) from alumnos where id_alumno= alumno_id_alumno) as alumno from objetivos where tutor_id_tutor = $id");
                     foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_objetivo']; ?></td>
                 <td><?php echo $element['descripcion_objetivo']; ?></td>
                 <td><?php echo $element['alumno']; ?></td>
-                <td><a href="objetivo.php?passport=<?php echo $element['id_tarea']; ?>" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="objetivo.php?passport=<?php echo $element['id_objetivo']; ?>" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php } ?>
             </tbody>
