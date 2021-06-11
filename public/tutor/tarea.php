@@ -1,5 +1,6 @@
 <?php
 include_once('../Tools/config.php');
+$idTutor = $id;
 if(isset($_GET['passport']))
     $id=$_GET['passport'];
 else
@@ -122,7 +123,7 @@ if($id!=0){
         <div class="card-body">
             <form action="tarea.php?passport=<?php echo $id; ?>" method="post">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"">
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"" <?php if($mode == "calificar") echo "disabled"; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -130,7 +131,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>">
+                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>" <?php if($mode == "calificar") echo "disabled"; ?>>
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -151,7 +152,7 @@ if($id!=0){
                         </div>
                     </div>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3"<?php if($mode == "editar") echo "disabled"; ?>>
                   <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
@@ -175,7 +176,7 @@ if($id!=0){
                       </div>
                   </div>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" disabled>
                   <input type="text" class="form-control" placeholder="Entregable" name="entregable" value="<?php echo $entregable; ?>">
                   <div class="input-group-append">
                       <div class="input-group-text">
@@ -184,12 +185,12 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="alumno" id="alumno" class="custom-select custom-select-sm">
-                        <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
+                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo "disabled"; ?>>
+                        <option value="" disabled <?php if(!isset($idTutor)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from alumnos");
                         foreach($result as $element){?>
-                        <option value="<?php echo $element['id_alumno'];?>" <?php if($alumno == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].""; ?></option>
+                        <option value="<?php echo $element['id_alumno'];?>" <?php if($idTutor == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].""; ?></option>
                         <?php } ?>
                     </select>
                     

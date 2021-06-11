@@ -77,7 +77,7 @@ include_once('../Tools/config.php');
               foreach($result as $element){
               ?>
               <tr>
-                <td><?php echo $element['alumno']; ?><a href="tarea.php?passport=<?php echo $element['alumno_id_alumno']; ?>" class="btn btn-info">Nueva tarea</a></td>
+                <td><a href="tarea.php?alumno=<?php echo $element['alumno_id_alumno']; ?>" class="btn btn-info"><?php echo $element['alumno']; ?> + </a></td>
                 <td><?php echo $element['nombre_tarea']; ?></td>
                 <td><?php echo $element['descripcion_tarea']; ?></td>
                 <td><?php echo $element['calificacion_tarea']; ?></td>
@@ -88,8 +88,8 @@ include_once('../Tools/config.php');
                   else
                     $calificacion = 0;
                   if($calificacion == 0){
-                    $editar = "tarea.php?element=".$element['id_tarea']."&action=editar";
-                    $calificar = "tarea.php?element=".$element['id_tarea']."&action=calificar";
+                    $editar = "tarea.php?passport=".$element['id_tarea']."&mode=editar";
+                    $calificar = "tarea.php?passport=".$element['id_tarea']."&mode=calificar";
                     $disabled = "";
                   }
                 ?>
