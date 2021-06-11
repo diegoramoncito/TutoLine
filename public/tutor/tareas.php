@@ -84,7 +84,7 @@ include_once('../Tools/config.php');
                 <?php
                   $editar = "#"; $calificar ="#"; $disabled = " disabled";
                   $estado = $element['estado_tarea'];
-                  if($estado == "Completado"){
+                  if($estado != "Completado"){
                     $editar = "tarea.php?passport=".$element['id_tarea']."&mode=editar";
                     $calificar = "tarea.php?passport=".$element['id_tarea']."&mode=calificar";
                     $disabled = "";
