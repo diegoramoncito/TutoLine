@@ -25,7 +25,7 @@ class Objetivo{
             $result = $db->fetchAll('SELECT LAST_INSERT_ID()');
             foreach($result as $element){
                 $this->id_objetivo = $element['LAST_INSERT_ID()'];
-            }file_exists
+            }
         }
     }
 
