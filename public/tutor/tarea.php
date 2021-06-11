@@ -1,6 +1,6 @@
 <?php
 include_once('../Tools/config.php');
-$idTutor = $id;
+$tutor = $id;
 if(isset($_GET['passport']))
     $id=$_GET['passport'];
 else
@@ -188,7 +188,7 @@ if($id!=0){
                     <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo "disabled"; ?>>
                         <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
                         <?php
-                        $result = $db->fetchAll("select * from alumnos");
+                        $result = $db->fetchAll("select * from alumnos where id_alumno in (select distinct id_alumno from tutoralumno where id_tutor = $tutor)");
                         foreach($result as $element){?>
                         <option value="<?php echo $element['id_alumno'];?>" <?php if($alumno == $element['id_alumno']) echo "selected";?>><?php echo $element['nombre_alumno']." ".$element['apellido_alumno'].""; ?></option>
                         <?php } ?>

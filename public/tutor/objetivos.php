@@ -80,7 +80,7 @@ include_once('../Tools/config.php');
                 <td><?php echo $element['nombre_objetivo']; ?></td>
                 <td><?php echo $element['descripcion_objetivo']; ?></td>
                 <td><?php echo $element['alumno']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="objetivo.php?passport=<?php echo $element['id_tarea']; ?>" class="btn btn-info">Editar</a><a href="/tutors/1/edit" class="btn btn-danger">Eliminar</a></td>
               </tr>
               <?php } ?>
             </tbody>
