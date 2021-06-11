@@ -74,7 +74,7 @@ include_once('../Tools/config.php');
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select *,(select nombre_alumno + ' ' + apellido_alumno from alumno where id_alumno = alumno_id_alumno) as alumno from objetivos");
+              <?php $result = $db->fetchAll("select *,(select concat(nombre_alumno,' ',apellido_alumno) from alumnos where id_alumno= alumno_id_alumno) as alumno from objetivos");
                     foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_objetivo']; ?></td>
