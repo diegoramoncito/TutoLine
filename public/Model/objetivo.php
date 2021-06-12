@@ -43,7 +43,7 @@ class Objetivo{
         foreach($result as $element){
             $total = intval($element['total']);
         }
-        if($total<11){
+        if($total<6){
             $query = "update objetivos set ";
             $query .= "nombre_objetivo = '$this->nombre_objetivo'";
             $query .= ",descripcion_objetivo = '$this->descripcion_objetivo'";

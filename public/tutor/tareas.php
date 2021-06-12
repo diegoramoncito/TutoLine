@@ -77,7 +77,17 @@ include_once('../Tools/config.php');
               foreach($result as $element){
               ?>
               <tr>
-                <td><a href="tarea.php?alumno=<?php echo $element['alumno_id_alumno']; ?>" class="btn btn-info"><?php echo $element['alumno']; ?> + </a></td>
+                <?php
+                  $result = $db->fetchAll("select count(id_tarea) as total from tareas where alumno_id_alumno = ".$element['alumno_id_alumno']);
+                  foreach($result as $element){
+                      $total = intval($element['total']);
+                  }
+                  if($total<11)
+                    $createURL = "tarea.php?alumno=".$element['alumno_id_alumno'];
+                  else
+                    $createURL = "#";
+                ?>
+                <td><a href="<?php echo $createURL; ?>" class="btn btn-info"><?php echo $element['alumno']; ?> + </a></td>
                 <td><?php echo $element['nombre_tarea']; ?></td>
                 <td><?php echo $element['descripcion_tarea']; ?></td>
                 <td><?php echo $element['calificacion_tarea']; ?></td>
