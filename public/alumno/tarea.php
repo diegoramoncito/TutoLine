@@ -128,7 +128,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="estado" id="estado" class="custom-select custom-select-sm" readonly="readonly">
+                    <select name="estado" id="estado" class="custom-select custom-select-sm" disabled>
                         <option value="" disabled <?php if(!isset($estado)) echo "selected"; ?>>Seleccione</option>
                         <option value="Por completar" <?php if($estado == "Por completar") echo "selected";?>>Por completar</option>
                         <option value="En progreso" <?php if($estado == "En progreso") echo "selected";?>>En progreso</option>
@@ -174,7 +174,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" readonly="readonly">
+                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" disabled>
                         <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from alumnos where id_alumno in (select distinct id_alumno from tutoralumno where id_tutor = $tutor)");
@@ -189,7 +189,7 @@ if($id!=0){
                         </div>
                     </div>
                 </div><div class="input-group mb-3">
-                    <select name="tutor" id="tutor" class="custom-select custom-select-sm" readonly="readonly">
+                    <select name="tutor" id="tutor" class="custom-select custom-select-sm" disabled>
                         <option value="" disabled <?php if(!isset($tutor)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from tutors");

@@ -184,7 +184,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo 'readonly="readonly"'; ?>>
+                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo 'disabled'; ?>>
                         <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from alumnos where id_alumno in (select distinct id_alumno from tutoralumno where id_tutor = $tutor)");
