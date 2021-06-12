@@ -100,7 +100,7 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
       labels  : ['Enero', 'Febrero', 'Marzo', 'Abril', 'May', 'June', 'July'],
       datasets: [
         {
-          label               : 'Digital Goods',
+          label               : 'Tareas',
           backgroundColor     : 'rgba(60,141,188,0.9)',
           borderColor         : 'rgba(60,141,188,0.8)',
           pointRadius          : false,
@@ -111,7 +111,29 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
           data                : [28, 48, 40, 19, 86, 290]
         },
         {
-          label               : 'Electronics',
+          label               : 'Objetivos',
+          backgroundColor     : 'rgba(210, 214, 222, 1)',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+          label               : 'Fecha de envio',
+          backgroundColor     : 'rgba(210, 214, 222, 1)',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+          label               : 'Total EXCELENCIA',
           backgroundColor     : 'rgba(210, 214, 222, 1)',
           borderColor         : 'rgba(210, 214, 222, 1)',
           pointRadius         : false,
