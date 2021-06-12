@@ -50,7 +50,7 @@ function categoria($id){
     GLOBAL $destination;
     GLOBAL $db;
     include_once('../Model/categoria.php');
-    $destination = "/admin/categorias.php";
+    $destination = "/tutor/categorias.php";
     $element = new Categoria();
     $element->get($id,$db);
     $element->delete($db);
@@ -59,7 +59,7 @@ function objetivo($id){
     GLOBAL $destination;
     GLOBAL $db;
     include_once('../Model/objetivo.php');
-    $destination = "/admin/objetivos.php";
+    $destination = "/tutor/objetivos.php";
     $element = new Objetivo();
     $element->get($id,$db);
     $element->delete($db);
@@ -68,7 +68,7 @@ function tarea($id){
     GLOBAL $destination;
     GLOBAL $db;
     include_once('../Model/tarea.php');
-    $destination = "/admin/tareas.php";
+    $destination = "/tutor/tareas.php";
     $element = new Tarea();
     $element->get($id,$db);
     $element->delete($db);
@@ -77,7 +77,7 @@ function tutor($id){
     GLOBAL $destination;
     GLOBAL $db;
     include_once('../Model/tutor.php');
-    $destination = "/admin/tutores.php";
+    $destination = "/tutor/tutores.php";
     $element = new Tutor();
     $element->get($id,$db);
     $element->delete($db);
