@@ -34,11 +34,11 @@ if(isset($_POST['nombre'])){
     $element->nombre_tarea=$nombre;
     $element->descripcion_tarea=$descripcion;
     $element->estado_tarea=$estado;
-    $element->fecha_entrega=$fecha;
+    if(isset($_POST['fecha']))$element->fecha_entrega=$fecha;
     $element->calificacion_tarea=$calificacion;
     $element->comentarios_tarea=$comentarios;
     $element->entregable_tarea=$entregable;
-    $element->alumno_id_alumno=$alumno;
+    if(isset($_POST['alumno']))$element->alumno_id_alumno=$alumno;
     $element->tutor_id_tutor=$tutor;
     $element->save($db);
     header("Location: /tutor/tareas.php");
