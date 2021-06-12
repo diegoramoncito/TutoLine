@@ -67,18 +67,29 @@ include_once('../Tools/config.php');
               <tr>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Alumno</th>
+                <th>Calificación</th>
+                <th>Materia</th>
                 <th>Opciones</th>
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select * from objetivos where alumno_id_alumno = $id");
+              <?php $result = $db->fetchAll("select *,(select concat(descripcion_categoria,'(',dificultad,')') from categorias where id_categoria=(select categorias_id_categoria from tutors where id_tutor=(select tutor_id_tutor from tareas where id_tarea = tar.id_tarea))) as materia from tareas tar where alumno_id_alumno = $id");
                     foreach($result as $element){ ?>
               <tr>
-                <td><?php echo $element['nombre_objetivo']; ?></td>
-                <td><?php echo $element['descripcion_objetivo']; ?></td>
-                <td><?php echo $element['alumno_id_alumno']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a></td>
+              <td><?php echo $element['nombre_tarea']; ?></td>
+                <td><?php echo $element['descripcion_tarea']; ?></td>
+                <td><?php echo $element['materia']; ?></td>
+                <td><?php echo $element['calificacion_tarea']; ?></td>
+                <?php
+                  $editar = "#"; $calificar ="#"; $disabled = " disabled";
+                  $estado = $element['estado_tarea'];
+                  if($estado != "Completado"){
+                    $editar = "tarea.php?passport=".$element['id_tarea']."&mode=editar";
+                    $calificar = "tarea.php?passport=".$element['id_tarea']."&mode=calificar";
+                    $disabled = "";
+                  }
+                ?>
+                <td><a href="<?php echo $editar; ?>" class="btn btn-info<?php echo $disabled;?>">Editar</a></td>
               </tr>
               <?php } ?>
             </tbody>
@@ -86,7 +97,8 @@ include_once('../Tools/config.php');
               <tr>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Alumno</th>
+                <th>Calificación</th>
+                <th>Materia</th>
                 <th>Opciones</th>
               </tr>
             </tfoot>
