@@ -27,9 +27,10 @@ if(isset($_POST['nombre'])){
     include_once('../Model/tarea.php');
     $element = new Tarea();
     $element->get($id,$db);
-    $element->estado_tarea=$estado;
+    $element->estado_tarea="En progreso";
     $element->comentarios_tarea=$comentarios;
     $element->entregable_tarea=$entregable;
+    $element->updated_at = "NOW()";
     $element->save($db);
     header("Location: /alumno/tareas.php");
 }

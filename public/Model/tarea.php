@@ -12,6 +12,7 @@ class Tarea{
     public $entregable_tarea;
     public $alumno_id_alumno;
     public $tutor_id_tutor;
+    public $updated_at;
 
     function get($id, $db){
         if($id>0){
@@ -57,6 +58,7 @@ class Tarea{
         $query .= ",entregable_tarea = '$this->entregable_tarea'";
         $query .= ",alumno_id_alumno = $this->alumno_id_alumno";
         $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
+        if($this->updated_at == "NOW()") $query .= ",updated_at = $this->updated_at";
         $query .= " where id_tarea = $this->id_tarea";
         $db->execute($query);
         error_log($query);
