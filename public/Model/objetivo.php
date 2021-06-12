@@ -39,14 +39,20 @@ class Objetivo{
     }
 
     function save($db){
-        $query = "update objetivos set ";
-        $query .= "nombre_objetivo = '$this->nombre_objetivo'";
-        $query .= ",descripcion_objetivo = '$this->descripcion_objetivo'";
-        $query .= ",estado_objetivo = '$this->estado_objetivo'";
-        $query .= ",alumno_id_alumno = $this->alumno_id_alumno";
-        $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
-        $query .= " where id_objetivo = $this->id_objetivo";
-        $db->execute($query);
+        $result = $db->fetchAll("select count(id_objetivo) as total from objetivos where alumno_id_alumno = $this->alumno_id_alumno");
+        foreach($result as $element){
+            $total = intval($element['total']);
+        }
+        if($total<11){
+            $query = "update objetivos set ";
+            $query .= "nombre_objetivo = '$this->nombre_objetivo'";
+            $query .= ",descripcion_objetivo = '$this->descripcion_objetivo'";
+            $query .= ",estado_objetivo = '$this->estado_objetivo'";
+            $query .= ",alumno_id_alumno = $this->alumno_id_alumno";
+            $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
+            $query .= " where id_objetivo = $this->id_objetivo";
+            $db->execute($query);
+        }
     }
 
     function delete($db){

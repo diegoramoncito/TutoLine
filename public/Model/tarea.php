@@ -49,19 +49,25 @@ class Tarea{
     }
 
     function save($db){
-        $query = "update tareas set ";
-        $query .= "nombre_tarea = '$this->nombre_tarea'";
-        $query .= ",descripcion_tarea = '$this->descripcion_tarea'";
-        $query .= ",estado_tarea = '$this->estado_tarea'";
-        $query .= ",calificacion_tarea = $this->calificacion_tarea";
-        $query .= ",comentarios_tarea = '$this->comentarios_tarea'";
-        $query .= ",entregable_tarea = '$this->entregable_tarea'";
-        $query .= ",alumno_id_alumno = $this->alumno_id_alumno";
-        $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
-        if($this->updated_at == "NOW()") $query .= ",updated_at = $this->updated_at";
-        $query .= " where id_tarea = $this->id_tarea";
-        $db->execute($query);
-        error_log($query);
+        $result = $db->fetchAll("select count(id_tarea) as total from tareas where alumno_id_alumno = $this->alumno_id_alumno");
+        foreach($result as $element){
+            $total = intval($element['total']);
+        }
+        if($total<11){
+            $query = "update tareas set ";
+            $query .= "nombre_tarea = '$this->nombre_tarea'";
+            $query .= ",descripcion_tarea = '$this->descripcion_tarea'";
+            $query .= ",estado_tarea = '$this->estado_tarea'";
+            $query .= ",calificacion_tarea = $this->calificacion_tarea";
+            $query .= ",comentarios_tarea = '$this->comentarios_tarea'";
+            $query .= ",entregable_tarea = '$this->entregable_tarea'";
+            $query .= ",alumno_id_alumno = $this->alumno_id_alumno";
+            $query .= ",tutor_id_tutor = $this->tutor_id_tutor";
+            if($this->updated_at == "NOW()") $query .= ",updated_at = $this->updated_at";
+            $query .= " where id_tarea = $this->id_tarea";
+            $db->execute($query);
+            error_log($query);
+        }
     }
 
     function delete($db){
