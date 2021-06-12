@@ -89,6 +89,10 @@ include_once('Tools/config.php');
 
 <?php footer(); ?>
 <script src="../../plugins/chart.js/Chart.min.js"></script>
+<?php
+$result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_id_tutor, estado_tarea, DATEDIFF(fecha_entrega, updated_at) as days from tareas");
+
+?>
 <script>
   $(function () {
 
