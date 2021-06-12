@@ -67,18 +67,18 @@ include_once('../Tools/config.php');
               <tr>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Alumno</th>
-                <th>Opciones</th>
+                <th>Materia</th>
+                <th>Estado</th>
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select * from objetivos where alumno_id_alumno = $id");
+              <?php $result = $db->fetchAll("select *,(select concat(nombre_categoria,'(',dificultad,')') from categorias where id_categoria=(select categorias_id_categoria from tutors where id_tutor=obj.tutor_id_tutor)) as materia from objetivos obj where alumno_id_alumno = $id");
                     foreach($result as $element){ ?>
               <tr>
                 <td><?php echo $element['nombre_objetivo']; ?></td>
                 <td><?php echo $element['descripcion_objetivo']; ?></td>
-                <td><?php echo $element['alumno_id_alumno']; ?></td>
-                <td><a href="/tutors/1/edit" class="btn btn-info">Editar</a></td>
+                <td><?php echo $element['materia']; ?></td>
+                <td><?php echo $element['estado_objetivo']; ?></td>
               </tr>
               <?php } ?>
             </tbody>
@@ -86,8 +86,8 @@ include_once('../Tools/config.php');
               <tr>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Alumno</th>
-                <th>Opciones</th>
+                <th>Materia</th>
+                <th>Estado</th>
               </tr>
             </tfoot>
           </table>

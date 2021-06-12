@@ -22,24 +22,14 @@ if(isset($_POST['nombre'])){
     $estado = $_POST['estado'];
     $alumno = $_POST['alumno'];
     $fecha = $_POST['fecha'];
-    if(is_numeric($_POST['calificacion']))
-        $calificacion = number_format($_POST['calificacion'], 2);
-    else
-        $calificacion = 0;
     $comentarios = $_POST['comentarios'];
     $entregable = $_POST['entregable'];
     include_once('../Model/tarea.php');
     $element = new Tarea();
     $element->get($id,$db);
-    $element->nombre_tarea=$nombre;
-    $element->descripcion_tarea=$descripcion;
     $element->estado_tarea=$estado;
-    $element->fecha_entrega=$fecha;
-    $element->calificacion_tarea=$calificacion;
     $element->comentarios_tarea=$comentarios;
     $element->entregable_tarea=$entregable;
-    $element->alumno_id_alumno=$alumno;
-    $element->tutor_id_tutor=$tutor;
     $element->save($db);
     header("Location: /alumno/tareas.php");
 }
@@ -122,7 +112,7 @@ if($id!=0){
         <div class="card-body">
             <form action="tarea.php?passport=<?php echo $id; ?>" method="post">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"" <?php if($mode == "calificar") echo 'readonly="readonly"'; ?>>
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $nombre; ?>"" readonly="readonly">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -130,7 +120,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>" <?php if($mode == "calificar") echo 'readonly="readonly"'; ?>>
+                  <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" value="<?php echo $descripcion; ?>" readonly="readonly">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -138,7 +128,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="estado" id="estado" class="custom-select custom-select-sm">
+                    <select name="estado" id="estado" class="custom-select custom-select-sm" readonly="readonly">
                         <option value="" disabled <?php if(!isset($estado)) echo "selected"; ?>>Seleccione</option>
                         <option value="Por completar" <?php if($estado == "Por completar") echo "selected";?>>Por completar</option>
                         <option value="En progreso" <?php if($estado == "En progreso") echo "selected";?>>En progreso</option>
@@ -152,7 +142,7 @@ if($id!=0){
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>" <?php if($mode == "calificar") echo 'readonly="readonly"'; ?>>
+                  <input type="date" class="form-control" placeholder="Fecha entrega" name="fecha" value="<?php echo $fecha; ?>" readonly="readonly">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-calendar"></span>
@@ -160,7 +150,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="number" step="any" class="form-control" placeholder="Calificación" name="calificacion" value="<?php echo $calificacion; ?>">
+                  <input type="number" step="any" class="form-control" placeholder="Calificación" name="calificacion" value="<?php echo $calificacion; ?>" readonly="readonly">
                   <div class="input-group-append">
                       <div class="input-group-text">
                       <span class="fas fa-user"></span>
@@ -184,7 +174,7 @@ if($id!=0){
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" <?php if($mode == "editar" || $mode == "calificar") echo 'readonly="readonly"'; ?>>
+                    <select name="alumno" id="alumno" class="custom-select custom-select-sm" readonly="readonly">
                         <option value="" disabled <?php if(!isset($alumno)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from alumnos where id_alumno in (select distinct id_alumno from tutoralumno where id_tutor = $tutor)");
@@ -199,7 +189,7 @@ if($id!=0){
                         </div>
                     </div>
                 </div><div class="input-group mb-3">
-                    <select name="tutor" id="tutor" class="custom-select custom-select-sm" disabled>
+                    <select name="tutor" id="tutor" class="custom-select custom-select-sm" readonly="readonly">
                         <option value="" disabled <?php if(!isset($tutor)) echo "selected"; ?>>Seleccione</option>
                         <?php
                         $result = $db->fetchAll("select * from tutors");

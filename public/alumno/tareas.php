@@ -73,13 +73,13 @@ include_once('../Tools/config.php');
               </tr>
             </thead>
             <tbody>
-              <?php $result = $db->fetchAll("select *,(select concat(descripcion_categoria,'(',dificultad,')') from categorias where id_categoria=(select categorias_id_categoria from tutors where id_tutor=(select tutor_id_tutor from tareas where id_tarea = tar.id_tarea))) as materia from tareas tar where alumno_id_alumno = $id");
+              <?php $result = $db->fetchAll("select *,(select concat(nombre_categoria,'(',dificultad,')') from categorias where id_categoria=(select categorias_id_categoria from tutors where id_tutor=tar.tutor_id_tutor)) as materia from tareas tar where alumno_id_alumno = $id");
                     foreach($result as $element){ ?>
               <tr>
               <td><?php echo $element['nombre_tarea']; ?></td>
                 <td><?php echo $element['descripcion_tarea']; ?></td>
-                <td><?php echo $element['materia']; ?></td>
                 <td><?php echo $element['calificacion_tarea']; ?></td>
+                <td><?php echo $element['materia']; ?></td>
                 <?php
                   $editar = "#"; $calificar ="#"; $disabled = " disabled";
                   $estado = $element['estado_tarea'];
