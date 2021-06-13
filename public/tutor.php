@@ -97,7 +97,7 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
   $(function () {
 
     var areaChartData = {
-      labels  : ['Enero', 'Febrero', 'Marzo', 'Abril', 'May', 'June', 'July'],
+      labels  : ['Enero', 'Febrero', 'Marzo'],
       datasets: [
         {
           label               : 'Tareas',
@@ -108,7 +108,7 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
           pointStrokeColor    : 'rgba(130,170,194,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(130,170,194,1)',
-          data                : [28, 48, 40, 19, 86, 290]
+          data                : [1, 2, 3]
         },
         {
           label               : 'Objetivos',
@@ -118,8 +118,8 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
           pointColor          : 'rgba(161, 200, 224, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
+          pointHighlightStroke: 'rgba(161,200,224,1)',
+          data                : [6, 5, 4]
         },
         {
           label               : 'Fecha de envio',
@@ -129,8 +129,8 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
           pointColor          : 'rgba(192, 232, 255, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
+          pointHighlightStroke: 'rgba(192,232,255,1)',
+          data                : [9, 8, 7]
         },
         {
           label               : 'Total EXCELENCIA',
@@ -141,7 +141,7 @@ $result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(43,84,109,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
+          data                : [4, 6, 8]
         },
       ]
     }
