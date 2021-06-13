@@ -116,6 +116,14 @@ function tutorMenu(){
     
 
     <li class="nav-header">Estadísticas</li>
+    <li class="nav-item">
+      <a href="/tutor.php" class="nav-link">
+        <i class="nav-icon fas fa-chalkboard-teacher"></i>
+        <p>
+          General
+        </p>
+      </a>
+    </li>
 
     <li class="nav-header">Configuración</li>
 
