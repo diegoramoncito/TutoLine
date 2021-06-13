@@ -112,7 +112,7 @@ foreach($result as $element){
     $numFechas.=",";
     $numTotal.=",";
   }
-  $listAlumnos.=$element['alumno'];
+  $listAlumnos.="'".$element['alumno']."'";
   $numTareas.=$element['tareas'];
   $numObjetivos.=$element['objetivos'];
   $numFechas.=$element['fecha'];
