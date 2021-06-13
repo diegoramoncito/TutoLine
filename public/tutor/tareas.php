@@ -66,7 +66,7 @@ include_once('../Tools/config.php');
               <tr>
                 <th>Alumno</th>
                 <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Estado</th>
                 <th>Calificación</th>
                 <th>Opciones</th>
               </tr>
@@ -89,7 +89,7 @@ include_once('../Tools/config.php');
                 ?>
                 <td><a href="<?php echo $createURL; ?>" class="btn btn-info"><?php echo $element['alumno']; ?> + </a></td>
                 <td><?php echo $element['nombre_tarea']; ?></td>
-                <td><?php echo $element['descripcion_tarea']; ?></td>
+                <td><?php echo $element['estado_tarea']; ?></td>
                 <td><?php echo $element['calificacion_tarea']; ?></td>
                 <?php
                   $editar = "#"; $calificar ="#"; $disabled = " disabled";
@@ -110,7 +110,7 @@ include_once('../Tools/config.php');
               <tr>
                 <th>Alumno</th>
                 <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Estado</th>
                 <th>Calificación</th>
                 <th>Opciones</th>
               </tr>
