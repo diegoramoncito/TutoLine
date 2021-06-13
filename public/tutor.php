@@ -90,11 +90,11 @@ include_once('Tools/config.php');
 <?php footer(); ?>
 <script src="../../plugins/chart.js/Chart.min.js"></script>
 <?php
-$query = "select concat(nombre_alumno,' ',apellido_alumno)"
-$query .= ",(select sum(calificacion_tarea) from tareas where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id ) tareas"
-$query .= ",(select count(id_objetivo)*20 from objetivos where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id and estado_objetivo = 'Completado') objetivos"
-$query .= ",(select 1) fecha"
-$query .= " from alumnos al where id_alumno in (select id_alumno from tutoralumno where id_tutor = $id);";
+$query = "select concat(nombre_alumno,' ',apellido_alumno)";
+$query .= ",(select sum(calificacion_tarea) from tareas where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id ) tareas";
+$query .= ",(select count(id_objetivo)*20 from objetivos where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id and estado_objetivo = 'Completado') objetivos";
+$query .= ",(select 1) fecha";
+$query .= " from alumnos al where id_alumno in (select id_alumno from tutoralumno where id_tutor = $id)";
 $result = $db->fetchAll($query);
 
 ?>
