@@ -90,19 +90,43 @@ include_once('Tools/config.php');
 <?php footer(); ?>
 <script src="../../plugins/chart.js/Chart.min.js"></script>
 <?php
-$query = "select concat(nombre_alumno,' ',apellido_alumno)";
+$query = "select concat(nombre_alumno,' ',apellido_alumno) alumno";
 $query .= ",(select sum(calificacion_tarea) from tareas where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id ) tareas";
 $query .= ",(select count(id_objetivo)*20 from objetivos where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id and estado_objetivo = 'Completado') objetivos";
-$query .= ",(select 1) fecha";
+$query .= ",(select sum(7- greatest(DATEDIFF(updated_at,fecha_entrega),0)) as days from tareas where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id and estado_tarea='Completado') fecha";
 $query .= " from alumnos al where id_alumno in (select id_alumno from tutoralumno where id_tutor = $id)";
 $result = $db->fetchAll($query);
 
+$count = 0;
+$listAlumnos = "";
+$numTareas = "";
+$numObjetivos = "";
+$numFechas = "";
+$numTotal = "";
+
+foreach($result as $element){
+  if($count > 0){
+    $listAlumnos.=",";
+    $numTareas.=",";
+    $numObjetivos.=",";
+    $numFechas.=",";
+    $numTotal.=",";
+  }
+  $listAlumnos.=$element['alumno'];
+  $numTareas.=$element['tareas'];
+  $numObjetivos.=$element['objetivos'];
+  $numFechas.=$element['fecha'];
+  $total = intval($element['tareas'])+intval($element['objetivos'])+intval($element['fecha']);
+  $numTotal.=$total;
+
+  $count++;
+}
 ?>
 <script>
   $(function () {
 
     var areaChartData = {
-      labels  : ['Enero', 'Febrero', 'Marzo'],
+      labels  : [<?php echo $listAlumnos;?>],
       datasets: [
         {
           label               : 'Tareas',
@@ -113,7 +137,7 @@ $result = $db->fetchAll($query);
           pointStrokeColor    : 'rgba(130,170,194,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(130,170,194,1)',
-          data                : [1, 2, 3]
+          data                : [<?php echo $numTareas;?>]
         },
         {
           label               : 'Objetivos',
@@ -124,7 +148,7 @@ $result = $db->fetchAll($query);
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(161,200,224,1)',
-          data                : [6, 5, 4]
+          data                : [<?php echo $numObjetivos;?>]
         },
         {
           label               : 'Fecha de envio',
@@ -135,7 +159,7 @@ $result = $db->fetchAll($query);
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(192,232,255,1)',
-          data                : [9, 8, 7]
+          data                : [<?php echo $numFechas;?>]
         },
         {
           label               : 'Total EXCELENCIA',
@@ -146,7 +170,7 @@ $result = $db->fetchAll($query);
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(43,84,109,1)',
-          data                : [4, 6, 8]
+          data                : [<?php echo $numTotal;?>]
         },
       ]
     }
