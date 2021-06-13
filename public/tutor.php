@@ -93,9 +93,9 @@ include_once('Tools/config.php');
 $query = "select concat(nombre_alumno,' ',apellido_alumno)"
 $query .= ",(select sum(calificacion_tarea) from tareas where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id ) tareas"
 $query .= ",(select count(id_objetivo)*20 from objetivos where alumno_id_alumno = al.id_alumno and tutor_id_tutor = $id and estado_objetivo = 'Completado') objetivos"
-$query .= ",() fecha"
+$query .= ",(select 1) fecha"
 $query .= " from alumnos al where id_alumno in (select id_alumno from tutoralumno where id_tutor = $id);";
-$result = $db->fetchAll("select id_tarea, nombre_tarea, alumno_id_alumno, tutor_id_tutor, estado_tarea, DATEDIFF(fecha_entrega, updated_at) as days from tareas");
+$result = $db->fetchAll($query);
 
 ?>
 <script>
